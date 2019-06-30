@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.scu.dao.UserDao">
+<!--    <insert id="insertOne">-->
+<!--        INSERT IGNORE INTO user (user_name, user_nickname, user_password_hash, user_password_salt, user_phone)-->
+<!--        VALUES (#{userName},-->
+<!--                #{userName},-->
+<!--                #{userPasswordHash},-->
+<!--                #{userPasswordSalt},-->
+<!--                #{userPhone})-->
+<!--    </insert>-->
+
+<!--    <update id="updateOne">-->
+<!--        UPDATE-->
+<!--            user-->
+<!--        SET user_phone         = #{userPhone},-->
+<!--            user_isVIP         = #{userIsVIP},-->
+<!--            user_score         = #{userScore},-->
+<!--            user_password_hash = #{userPasswordHash},-->
+<!--            user_password_salt = #{userPasswordSalt},-->
+<!--            user_nickname      = #{userNickname}-->
+<!--        WHERE user_name = #{userName}-->
+<!--    </update>-->
+
+<!--    <update id="updateScore">-->
+<!--        UPDATE user-->
+<!--        SET user_score = #{userScore}-->
+<!--        WHERE user_name = #{userName}-->
+<!--    </update>-->
+
+<!--    <select id="selectByUserPhone" resultType="User">-->
+<!--        SELECT user_id,-->
+<!--               user_register_time,-->
+<!--               user_score,-->
+<!--               user_name,-->
+<!--               user_nickname,-->
+<!--               user_password_hash,-->
+<!--               user_password_salt,-->
+<!--               user_phone,-->
+<!--               user_phone,-->
+<!--               user_isVIP-->
+<!--        FROM user-->
+<!--        WHERE user_phone = #{userPhone}-->
+<!--    </select>-->
+
+<!--    <select id="selectByUserId" resultType="User">-->
+<!--        SELECT user_id,-->
+<!--               user_register_time,-->
+<!--               user_score,-->
+<!--               user_name,-->
+<!--               user_nickname,-->
+<!--               user_password_hash,-->
+<!--               user_password_salt,-->
+<!--               user_phone,-->
+<!--               user_phone,-->
+<!--               user_isVIP-->
+<!--        FROM user-->
+<!--        WHERE user_id = #{userId}-->
+<!--    </select>-->
+
+<!--    <select id="selectByUserName" resultType="User">-->
+<!--        SELECT user_id,-->
+<!--               user_register_time,-->
+<!--               user_score,-->
+<!--               user_name,-->
+<!--               user_nickname,-->
+<!--               user_password_hash,-->
+<!--               user_password_salt,-->
+<!--               user_phone,-->
+<!--               user_phone,-->
+<!--               user_isVIP-->
+<!--        FROM user-->
+<!--        WHERE user_name = #{userName}-->
+<!--    </select>-->
+
+<!--    <select id="selectCountByUserId" resultType="int">-->
+<!--        SELECT COUNT(user_id)-->
+<!--        FROM user-->
+<!--        WHERE user_id = #{userId}-->
+<!--    </select>-->
+
+<!--    <select id="selectCountByUserPhone" resultType="int">-->
+<!--        SELECT COUNT(user_id)-->
+<!--        FROM user-->
+<!--        WHERE user_phone = #{userPhone}-->
+<!--    </select>-->
+
+<!--    <select id="selectCountByUserName" resultType="int">-->
+<!--        SELECT COUNT(user_id)-->
+<!--        FROM user-->
+<!--        WHERE user_name = #{userName}-->
+<!--    </select>-->
+
+</mapper>
