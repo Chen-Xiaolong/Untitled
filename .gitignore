@@ -2,7 +2,7 @@
 # .idea
 # *.iml
 target/
-src/main/resources/jdbc.properties
+# src/main/resources/jdbc.properties
 
 # Compiled class file
 *.class
