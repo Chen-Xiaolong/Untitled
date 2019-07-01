@@ -1,6 +1,5 @@
 # IDEA
-# .idea
-# *.iml
+ .idea
 target/
 src/main/resources/jdbc.properties
 
