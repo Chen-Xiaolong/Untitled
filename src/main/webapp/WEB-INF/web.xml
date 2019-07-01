@@ -30,7 +30,7 @@
 
 
     <servlet>
-        <servlet-name>each-dispatcher</servlet-name>
+        <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 
         <init-param>
@@ -39,7 +39,7 @@
         </init-param>
     </servlet>
     <servlet-mapping>
-        <servlet-name>each-dispatcher</servlet-name>
+        <servlet-name>dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 

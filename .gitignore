@@ -1,7 +1,8 @@
 # IDEA
 # .idea
 # *.iml
-src\main\resources\jdbc.properties
+target/
+src/main/resources/jdbc.properties
 
 # Compiled class file
 *.class

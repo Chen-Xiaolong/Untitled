@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Untitled:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2360722-6b79-4ae9-8dc5-b3af38ca8d94" name="Default Changelist" comment="">
+    <list default="true" id="a2360722-6b79-4ae9-8dc5-b3af38ca8d94" name="Default Changelist" comment="add jdbc.properties to .gitignore">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Untitled_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/scu/controller/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/scu/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/scu/service/SparkTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/edu/scu/dao/UserDaoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/scu/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/scu/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sql/scheme.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sql/scheme.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,11 +45,39 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="untitled" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="untitled" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="untitled" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="untitled: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="untitled" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="untitled: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
+  </component>
+  <component name="ExecutionTargetDialog">
+    <checked>
+      <node key="26ef3503-31d0-40eb-a703-c1eb943be72a" />
+    </checked>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="Untitled" />
@@ -46,8 +96,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+            <state relative-caret-position="216">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -58,12 +108,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>mysql</find>
+      <find>log</find>
+      <find>jackson</find>
+      <find>scala.binary</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -72,18 +127,41 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/spring/spring-service.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/spring/spring-web.xml" />
+        <option value="26ef3503-31d0-40eb-a703-c1eb943be72a/schema/untitled/table/user.sql" />
+        <option value="$PROJECT_DIR$/src/main/sql/scheme.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/scu/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/scu/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/cn/edu/scu/dao/UserDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/scu/service/SprakTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/scu/controller/SprakTestController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/scu/controller/SparkTestController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/scu/controller/TestController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/edu/scu/service/SparkTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
   <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\apache-maven-3.5.2\repository" />
+        <option name="userSettingsFile" value="C:\Users\Administrator\.m2\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
@@ -98,13 +176,31 @@
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="Untitled" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Untitled" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Untitled" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+          <item name="org.apache.spark:spark-mllib_2.12:2.4.3" type="c0821a7e:MavenProjectsStructure$DependencyNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Untitled" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+          <item name="org.apache.spark:spark-mllib_2.12:2.4.3" type="c0821a7e:MavenProjectsStructure$DependencyNode" />
+          <item name="org.scala-lang.modules:scala-parser-combinators_2.12:1.1.0" type="c0821a7e:MavenProjectsStructure$DependencyNode" />
+        </path>
       </expand>
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="249" />
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="319" />
+    <option name="y" value="47" />
     <option name="width" value="1608" />
     <option name="height" value="1000" />
   </component>
@@ -114,6 +210,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -137,7 +235,42 @@
               <item name="Untitled" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="scu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="scu" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="scu" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="scu" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Untitled" type="b2602c69:ProjectViewProjectNode" />
@@ -145,22 +278,62 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Untitled" type="b2602c69:ProjectViewProjectNode" />
               <item name="Untitled" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="sql" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Untitled" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -168,15 +341,27 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="spring" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="cn.edu.scu.dao" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Untitled\src\main\resources" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Untitled\src\main" />
       <recent name="D:\Untitled\src\main\resources" />
@@ -194,6 +379,189 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.42">
+    <configuration name="UserDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Untitled" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.edu.scu.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.edu.scu.dao" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.scu.dao.UserDaoTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDaoTest.insertOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Untitled" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.edu.scu.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.edu.scu.dao" />
+      <option name="MAIN_CLASS_NAME" value="cn.edu.scu.dao.UserDaoTest" />
+      <option name="METHOD_NAME" value="insertOne" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 8.5.42" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.42" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8000/Untitled_war_exploded/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Untitled:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/Untitled_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Untitled_2" />
+        <option name="HTTP_PORT" value="8000" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="9378" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Untitled:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_Untitled" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="9378" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.UserDaoTest" />
+      <item itemvalue="JUnit.UserDaoTest.insertOne" />
+      <item itemvalue="Tomcat Server.Tomcat 8.5.42" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserDaoTest.insertOne" />
+        <item itemvalue="JUnit.UserDaoTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpringBeansView">
+    <option name="beanDetailsProportion" value="0.3" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -206,7 +574,15 @@
       <updated>1561871936772</updated>
       <workItem from="1561871939531" duration="3898000" />
       <workItem from="1561878491921" duration="1055000" />
-      <workItem from="1561879578692" duration="3490000" />
+      <workItem from="1561879578692" duration="12609000" />
+      <workItem from="1561939554653" duration="1260000" />
+      <workItem from="1561940850421" duration="72000" />
+      <workItem from="1561940957266" duration="452000" />
+      <workItem from="1561941440067" duration="223000" />
+      <workItem from="1561941698402" duration="91000" />
+      <workItem from="1561941817951" duration="342000" />
+      <workItem from="1561942283376" duration="4780000" />
+      <workItem from="1561947173771" duration="5195000" />
     </task>
     <task id="LOCAL-00001" summary="Add IDEA files to .gitignore">
       <created>1561872078172</created>
@@ -264,17 +640,65 @@
       <option name="project" value="LOCAL" />
       <updated>1561887264149</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add jdbc.properties to .gitignore">
+      <created>1561887462560</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1561887462560</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="UserDaoTest - 2019.07.01 at 09h 56m 15s.xml">
+      <configuration name="UserDaoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest_insertOne - 2019.07.01 at 09h 56m 50s.xml">
+      <configuration name="UserDaoTest.insertOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest_insertOne - 2019.07.01 at 10h 03m 35s.xml">
+      <configuration name="UserDaoTest.insertOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest_insertOne - 2019.07.01 at 10h 03m 46s.xml">
+      <configuration name="UserDaoTest.insertOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest_insertOne - 2019.07.01 at 10h 04m 47s.xml">
+      <configuration name="UserDaoTest.insertOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest_insertOne - 2019.07.01 at 10h 06m 27s.xml">
+      <configuration name="UserDaoTest.insertOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest_insertOne - 2019.07.01 at 10h 09m 47s.xml">
+      <configuration name="UserDaoTest.insertOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest_insertOne - 2019.07.01 at 10h 10m 39s.xml">
+      <configuration name="UserDaoTest.insertOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest_insertOne - 2019.07.01 at 10h 11m 12s.xml">
+      <configuration name="UserDaoTest.insertOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserDaoTest_insertOne - 2019.07.01 at 10h 13m 24s.xml">
+      <configuration name="UserDaoTest.insertOne" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8443000" />
+    <option name="totallyTimeSpent" value="29977000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="249" y="23" width="1608" height="1000" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49913943" visible="true" weight="0.25645995" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49913943" visible="true" weight="0.22867803" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -282,31 +706,33 @@
       <window_info id="Favorites" order="5" sideWeight="0.5008606" side_tool="true" weight="0.25322998" />
       <window_info id="Image Layers" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Application Servers" weight="0.329718" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.329718" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.329718" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.3290993" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" />
-      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3286334" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.329718" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.3290993" />
+      <window_info anchor="bottom" id="Database Console" order="15" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.32945737" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.27665246" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.29069766" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.23987207" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.15405117" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,68 +786,447 @@
     <MESSAGE value="Add SSM to configuration files" />
     <MESSAGE value="Add IDEA project configuration" />
     <MESSAGE value="Modify database configurations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modify database configurations" />
+    <MESSAGE value="add jdbc.properties to .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="add jdbc.properties to .gitignore" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/META-INF/MANIFEST.MF" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/scu/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
+    <entry file="file://$PROJECT_DIR$/Untitled.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/.idea/sqldialects.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+        <state relative-caret-position="-630">
+          <caret line="190" column="52" selection-start-line="190" selection-start-column="47" selection-end-line="190" selection-end-column="52" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3af5e1cf-44f1-4af9-ab2c-d7f037c4c0e3/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/52e54640-0ddb-4b4e-b0d5-4d890653a7eb/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ece90eda-baa5-46b5-875b-0a4e12190c99/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1d7f7fc2-dc02-40dd-aef2-6180589dc9fb/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/86921462-c201-4da2-99ad-05c2e5741fbc/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a39a05df-e061-452b-b1e4-8a5df903baf7/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://a39a05df-e061-452b-b1e4-8a5df903baf7/schema/untitled/table/user" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/67658b10-5df8-4b6c-82d5-f31d64ba2ef9/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2399188e-43ce-41db-9fab-693139e61e85/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e4cb429d-ed05-4c14-adc9-017e0df842e1/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://26ef3503-31d0-40eb-a703-c1eb943be72a/schema/untitled/table/user.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/26ef3503-31d0-40eb-a703-c1eb943be72a/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.6/mybatis-3.4.6.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-567" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+        <state relative-caret-position="1026">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
         </state>
       </provider>
     </entry>
+    <entry file="das://26ef3503-31d0-40eb-a703-c1eb943be72a/schema/untitled/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="44bb3885-0faf-4aae-ac35-af86bbce333f">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml" />
+    <entry file="uml://MAVEN/cn.edu.scu:Untitled:1.0-SNAPSHOT">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MAVEN</ID>
+          <OriginalElement>cn.edu.scu:Untitled:1.0-SNAPSHOT</OriginalElement>
+          <nodes>
+            <node x="" y="">cn.edu.scu:Untitled:1.0-SNAPSHOT</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.thoughtworks.paranamer:paranamer:jar:2.8</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.avro:avro:jar:1.8.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.avro:avro:jar:1.8.2/org.codehaus.jackson:jackson-core-asl:jar:1.9.13</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.avro:avro:jar:1.8.2/org.codehaus.jackson:jackson-mapper-asl:jar:1.9.13</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.avro:avro:jar:1.8.2/com.thoughtworks.paranamer:paranamer:jar:2.7</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.avro:avro:jar:1.8.2/org.xerial.snappy:snappy-java:jar:1.1.1.3</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.avro:avro:jar:1.8.2/org.apache.commons:commons-compress:jar:1.8.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.avro:avro:jar:1.8.2/org.tukaani:xz:jar:1.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.avro:avro:jar:1.8.2/org.slf4j:slf4j-api:jar:1.7.7</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.avro:avro-mapred:jar:hadoop2:1.8.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.avro:avro-mapred:jar:hadoop2:1.8.2/org.apache.avro:avro-ipc:jar:1.8.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.avro:avro-mapred:jar:hadoop2:1.8.2/org.apache.avro:avro-ipc:jar:1.8.2/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.avro:avro-mapred:jar:hadoop2:1.8.2/commons-codec:commons-codec:jar:1.9</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.avro:avro-mapred:jar:hadoop2:1.8.2/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.twitter:chill_2.12:jar:0.9.3</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.twitter:chill_2.12:jar:0.9.3/org.scala-lang:scala-library:jar:2.12.6</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.twitter:chill_2.12:jar:0.9.3/com.esotericsoftware:kryo-shaded:jar:4.0.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.twitter:chill_2.12:jar:0.9.3/com.esotericsoftware:kryo-shaded:jar:4.0.2/com.esotericsoftware:minlog:jar:1.3.0</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.twitter:chill_2.12:jar:0.9.3/com.esotericsoftware:kryo-shaded:jar:4.0.2/org.objenesis:objenesis:jar:2.5.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.twitter:chill-java:jar:0.9.3</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.xbean:xbean-asm6-shaded:jar:4.8</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/com.google.guava:guava:jar:11.0.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/commons-cli:commons-cli:jar:1.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.apache.commons:commons-math3:jar:3.1.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/xmlenc:xmlenc:jar:0.52</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/commons-httpclient:commons-httpclient:jar:3.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/commons-httpclient:commons-httpclient:jar:3.1/commons-codec:commons-codec:jar:1.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/commons-codec:commons-codec:jar:1.4</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/commons-io:commons-io:jar:2.4</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/commons-net:commons-net:jar:3.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/commons-collections:commons-collections:jar:3.2.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/commons-lang:commons-lang:jar:2.6</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/commons-configuration:commons-configuration:jar:1.6</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/commons-configuration:commons-configuration:jar:1.6/commons-collections:commons-collections:jar:3.2.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/commons-configuration:commons-configuration:jar:1.6/commons-lang:commons-lang:jar:2.4</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/commons-configuration:commons-configuration:jar:1.6/commons-digester:commons-digester:jar:1.8</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/commons-configuration:commons-configuration:jar:1.6/commons-digester:commons-digester:jar:1.8/commons-beanutils:commons-beanutils:jar:1.7.0</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.slf4j:slf4j-api:jar:1.7.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.slf4j:slf4j-log4j12:jar:1.7.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.apache.avro:avro:jar:1.7.4</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/com.google.protobuf:protobuf-java:jar:2.5.0</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/com.google.code.gson:gson:jar:2.2.4</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.apache.hadoop:hadoop-auth:jar:2.6.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.apache.hadoop:hadoop-auth:jar:2.6.5/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.apache.hadoop:hadoop-auth:jar:2.6.5/commons-codec:commons-codec:jar:1.10</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.apache.hadoop:hadoop-auth:jar:2.6.5/org.slf4j:slf4j-log4j12:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.apache.hadoop:hadoop-auth:jar:2.6.5/org.apache.httpcomponents:httpclient:jar:4.2.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.apache.hadoop:hadoop-auth:jar:2.6.5/org.apache.directory.server:apacheds-kerberos-codec:jar:2.0.0-M15</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.apache.hadoop:hadoop-auth:jar:2.6.5/org.apache.directory.server:apacheds-kerberos-codec:jar:2.0.0-M15/org.apache.directory.server:apacheds-i18n:jar:2.0.0-M15</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.apache.hadoop:hadoop-auth:jar:2.6.5/org.apache.directory.server:apacheds-kerberos-codec:jar:2.0.0-M15/org.apache.directory.server:apacheds-i18n:jar:2.0.0-M15/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.apache.hadoop:hadoop-auth:jar:2.6.5/org.apache.directory.server:apacheds-kerberos-codec:jar:2.0.0-M15/org.apache.directory.api:api-asn1-api:jar:1.0.0-M20</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.apache.hadoop:hadoop-auth:jar:2.6.5/org.apache.directory.server:apacheds-kerberos-codec:jar:2.0.0-M15/org.apache.directory.api:api-asn1-api:jar:1.0.0-M20/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.apache.hadoop:hadoop-auth:jar:2.6.5/org.apache.directory.server:apacheds-kerberos-codec:jar:2.0.0-M15/org.apache.directory.api:api-util:jar:1.0.0-M20</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.apache.hadoop:hadoop-auth:jar:2.6.5/org.apache.directory.server:apacheds-kerberos-codec:jar:2.0.0-M15/org.apache.directory.api:api-util:jar:1.0.0-M20/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.apache.hadoop:hadoop-auth:jar:2.6.5/org.apache.directory.server:apacheds-kerberos-codec:jar:2.0.0-M15/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.apache.curator:curator-client:jar:2.6.0</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.apache.curator:curator-client:jar:2.6.0/org.slf4j:slf4j-api:jar:1.7.6</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.htrace:htrace-core:jar:3.0.4</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.htrace:htrace-core:jar:3.0.4/com.google.guava:guava:jar:12.0.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-common:jar:2.6.5/org.apache.commons:commons-compress:jar:1.4.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-hdfs:jar:2.6.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-hdfs:jar:2.6.5/com.google.guava:guava:jar:16.0.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-hdfs:jar:2.6.5/org.mortbay.jetty:jetty-util:jar:6.1.26</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-hdfs:jar:2.6.5/commons-codec:commons-codec:jar:1.10</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-hdfs:jar:2.6.5/commons-io:commons-io:jar:1.3.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-hdfs:jar:2.6.5/com.google.protobuf:protobuf-java:jar:3.6.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-hdfs:jar:2.6.5/io.netty:netty:jar:3.6.2.Final</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-hdfs:jar:2.6.5/xerces:xercesImpl:jar:2.9.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-hdfs:jar:2.6.5/xerces:xercesImpl:jar:2.9.1/xml-apis:xml-apis:jar:1.3.04</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-app:jar:2.6.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-app:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-common:jar:2.6.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-app:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-common:jar:2.6.5/org.apache.hadoop:hadoop-yarn-client:jar:2.6.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-app:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-common:jar:2.6.5/org.apache.hadoop:hadoop-yarn-client:jar:2.6.5/com.google.guava:guava:jar:16.0.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-app:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-common:jar:2.6.5/org.apache.hadoop:hadoop-yarn-server-common:jar:2.6.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-app:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-common:jar:2.6.5/org.apache.hadoop:hadoop-yarn-server-common:jar:2.6.5/com.google.guava:guava:jar:16.0.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-app:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-common:jar:2.6.5/org.apache.hadoop:hadoop-yarn-server-common:jar:2.6.5/com.google.protobuf:protobuf-java:jar:3.6.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-app:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-common:jar:2.6.5/com.google.protobuf:protobuf-java:jar:3.6.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-app:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-common:jar:2.6.5/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-app:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-common:jar:2.6.5/org.slf4j:slf4j-log4j12:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-app:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-shuffle:jar:2.6.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-app:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-shuffle:jar:2.6.5/com.google.protobuf:protobuf-java:jar:3.6.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-app:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-shuffle:jar:2.6.5/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-app:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-shuffle:jar:2.6.5/org.slf4j:slf4j-log4j12:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-app:jar:2.6.5/com.google.protobuf:protobuf-java:jar:3.6.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-app:jar:2.6.5/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-app:jar:2.6.5/org.slf4j:slf4j-log4j12:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-yarn-api:jar:2.6.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-yarn-api:jar:2.6.5/com.google.guava:guava:jar:16.0.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-yarn-api:jar:2.6.5/com.google.protobuf:protobuf-java:jar:3.6.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-core:jar:2.6.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-core:jar:2.6.5/org.apache.hadoop:hadoop-yarn-common:jar:2.6.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-core:jar:2.6.5/org.apache.hadoop:hadoop-yarn-common:jar:2.6.5/javax.xml.bind:jaxb-api:jar:2.2.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-core:jar:2.6.5/org.apache.hadoop:hadoop-yarn-common:jar:2.6.5/javax.xml.bind:jaxb-api:jar:2.2.2/javax.xml.stream:stax-api:jar:1.0-2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-core:jar:2.6.5/org.apache.hadoop:hadoop-yarn-common:jar:2.6.5/javax.xml.bind:jaxb-api:jar:2.2.2/javax.activation:activation:jar:1.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-core:jar:2.6.5/org.apache.hadoop:hadoop-yarn-common:jar:2.6.5/org.apache.commons:commons-compress:jar:1.8.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-core:jar:2.6.5/org.apache.hadoop:hadoop-yarn-common:jar:2.6.5/commons-codec:commons-codec:jar:1.10</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-core:jar:2.6.5/org.apache.hadoop:hadoop-yarn-common:jar:2.6.5/org.codehaus.jackson:jackson-jaxrs:jar:1.9.13</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-core:jar:2.6.5/org.apache.hadoop:hadoop-yarn-common:jar:2.6.5/org.codehaus.jackson:jackson-xc:jar:1.9.13</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-core:jar:2.6.5/org.apache.hadoop:hadoop-yarn-common:jar:2.6.5/com.google.guava:guava:jar:16.0.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-core:jar:2.6.5/org.apache.hadoop:hadoop-yarn-common:jar:2.6.5/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-core:jar:2.6.5/org.apache.hadoop:hadoop-yarn-common:jar:2.6.5/com.google.protobuf:protobuf-java:jar:3.6.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-core:jar:2.6.5/org.apache.hadoop:hadoop-yarn-common:jar:2.6.5/commons-io:commons-io:jar:1.3.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-core:jar:2.6.5/com.google.protobuf:protobuf-java:jar:3.6.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-core:jar:2.6.5/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-core:jar:2.6.5/org.slf4j:slf4j-log4j12:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-jobclient:jar:2.6.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-jobclient:jar:2.6.5/com.google.protobuf:protobuf-java:jar:3.6.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-jobclient:jar:2.6.5/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-mapreduce-client-jobclient:jar:2.6.5/org.slf4j:slf4j-log4j12:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.hadoop:hadoop-client:jar:2.6.5/org.apache.hadoop:hadoop-annotations:jar:2.6.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.spark:spark-launcher_2.12:jar:2.4.3</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.spark:spark-kvstore_2.12:jar:2.4.3</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.spark:spark-kvstore_2.12:jar:2.4.3/org.fusesource.leveldbjni:leveldbjni-all:jar:1.8</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.spark:spark-kvstore_2.12:jar:2.4.3/com.fasterxml.jackson.core:jackson-core:jar:2.6.7</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.spark:spark-kvstore_2.12:jar:2.4.3/com.fasterxml.jackson.core:jackson-databind:jar:2.6.7.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.spark:spark-kvstore_2.12:jar:2.4.3/com.fasterxml.jackson.core:jackson-annotations:jar:2.6.7</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.spark:spark-network-common_2.12:jar:2.4.3</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.spark:spark-network-common_2.12:jar:2.4.3/org.apache.commons:commons-lang3:jar:3.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.spark:spark-network-common_2.12:jar:2.4.3/com.fasterxml.jackson.core:jackson-databind:jar:2.9.9</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.spark:spark-network-common_2.12:jar:2.4.3/com.fasterxml.jackson.core:jackson-annotations:jar:2.9.0</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.spark:spark-network-shuffle_2.12:jar:2.4.3</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.spark:spark-unsafe_2.12:jar:2.4.3</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/javax.activation:activation:jar:1.1.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.curator:curator-recipes:jar:2.6.0</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.curator:curator-recipes:jar:2.6.0/org.apache.curator:curator-framework:jar:2.6.0</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.curator:curator-recipes:jar:2.6.0/com.google.guava:guava:jar:16.0.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.zookeeper:zookeeper:jar:3.4.6</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.zookeeper:zookeeper:jar:3.4.6/org.slf4j:slf4j-api:jar:1.6.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.zookeeper:zookeeper:jar:3.4.6/org.slf4j:slf4j-log4j12:jar:1.6.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.zookeeper:zookeeper:jar:3.4.6/log4j:log4j:jar:1.2.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.zookeeper:zookeeper:jar:3.4.6/io.netty:netty:jar:3.7.0.Final</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/javax.servlet:javax.servlet-api:jar:3.1.0</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.commons:commons-lang3:jar:3.7</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.commons:commons-math3:jar:3.4.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.google.code.findbugs:jsr305:jar:1.3.9</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.slf4j:jul-to-slf4j:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.slf4j:jcl-over-slf4j:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/log4j:log4j:jar:1.2.17</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.slf4j:slf4j-log4j12:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.ning:compress-lzf:jar:1.0.3</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.xerial.snappy:snappy-java:jar:1.1.7.3</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.lz4:lz4-java:jar:1.4.0</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.github.luben:zstd-jni:jar:1.3.2-2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.roaringbitmap:RoaringBitmap:jar:0.7.45</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.roaringbitmap:RoaringBitmap:jar:0.7.45/org.roaringbitmap:shims:jar:0.7.45</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/commons-net:commons-net:jar:3.6</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.scala-lang:scala-library:jar:2.12.8</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.json4s:json4s-jackson_2.12:jar:3.5.3</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.json4s:json4s-jackson_2.12:jar:3.5.3/org.scala-lang:scala-library:jar:2.12.3</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.json4s:json4s-jackson_2.12:jar:3.5.3/org.json4s:json4s-core_2.12:jar:3.5.3</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.json4s:json4s-jackson_2.12:jar:3.5.3/org.json4s:json4s-core_2.12:jar:3.5.3/org.scala-lang:scala-library:jar:2.12.8</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.json4s:json4s-jackson_2.12:jar:3.5.3/org.json4s:json4s-core_2.12:jar:3.5.3/org.json4s:json4s-ast_2.12:jar:3.5.3</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.json4s:json4s-jackson_2.12:jar:3.5.3/org.json4s:json4s-core_2.12:jar:3.5.3/org.json4s:json4s-ast_2.12:jar:3.5.3/org.scala-lang:scala-library:jar:2.12.8</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.json4s:json4s-jackson_2.12:jar:3.5.3/org.json4s:json4s-core_2.12:jar:3.5.3/org.json4s:json4s-scalap_2.12:jar:3.5.3</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.json4s:json4s-jackson_2.12:jar:3.5.3/org.json4s:json4s-core_2.12:jar:3.5.3/org.json4s:json4s-scalap_2.12:jar:3.5.3/org.scala-lang:scala-library:jar:2.12.8</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.json4s:json4s-jackson_2.12:jar:3.5.3/org.json4s:json4s-core_2.12:jar:3.5.3/org.scala-lang.modules:scala-xml_2.12:jar:1.0.6</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.json4s:json4s-jackson_2.12:jar:3.5.3/org.json4s:json4s-core_2.12:jar:3.5.3/org.scala-lang.modules:scala-xml_2.12:jar:1.0.6/org.scala-lang:scala-library:jar:2.12.0</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.glassfish.jersey.core:jersey-client:jar:2.22.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.glassfish.jersey.core:jersey-client:jar:2.22.2/javax.ws.rs:javax.ws.rs-api:jar:2.0.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.glassfish.jersey.core:jersey-client:jar:2.22.2/org.glassfish.hk2:hk2-api:jar:2.4.0-b34</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.glassfish.jersey.core:jersey-client:jar:2.22.2/org.glassfish.hk2:hk2-api:jar:2.4.0-b34/org.glassfish.hk2:hk2-utils:jar:2.4.0-b34</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.glassfish.jersey.core:jersey-client:jar:2.22.2/org.glassfish.hk2:hk2-api:jar:2.4.0-b34/org.glassfish.hk2.external:aopalliance-repackaged:jar:2.4.0-b34</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.glassfish.jersey.core:jersey-client:jar:2.22.2/org.glassfish.hk2.external:javax.inject:jar:2.4.0-b34</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.glassfish.jersey.core:jersey-client:jar:2.22.2/org.glassfish.hk2:hk2-locator:jar:2.4.0-b34</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.glassfish.jersey.core:jersey-client:jar:2.22.2/org.glassfish.hk2:hk2-locator:jar:2.4.0-b34/org.javassist:javassist:jar:3.18.1-GA</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.glassfish.jersey.core:jersey-common:jar:2.22.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.glassfish.jersey.core:jersey-common:jar:2.22.2/javax.annotation:javax.annotation-api:jar:1.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.glassfish.jersey.core:jersey-common:jar:2.22.2/org.glassfish.jersey.bundles.repackaged:jersey-guava:jar:2.22.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.glassfish.jersey.core:jersey-common:jar:2.22.2/org.glassfish.hk2:osgi-resource-locator:jar:1.0.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.glassfish.jersey.core:jersey-server:jar:2.22.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.glassfish.jersey.core:jersey-server:jar:2.22.2/org.glassfish.jersey.media:jersey-media-jaxb:jar:2.22.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.glassfish.jersey.core:jersey-server:jar:2.22.2/javax.validation:validation-api:jar:1.1.0.Final</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.glassfish.jersey.containers:jersey-container-servlet:jar:2.22.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.glassfish.jersey.containers:jersey-container-servlet-core:jar:2.22.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/io.netty:netty-all:jar:4.1.17.Final</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/io.netty:netty:jar:3.9.9.Final</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.clearspring.analytics:stream:jar:2.7.0</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/io.dropwizard.metrics:metrics-core:jar:3.1.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/io.dropwizard.metrics:metrics-core:jar:3.1.5/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/io.dropwizard.metrics:metrics-jvm:jar:3.1.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/io.dropwizard.metrics:metrics-jvm:jar:3.1.5/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/io.dropwizard.metrics:metrics-json:jar:3.1.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/io.dropwizard.metrics:metrics-json:jar:3.1.5/com.fasterxml.jackson.core:jackson-databind:jar:2.4.2</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/io.dropwizard.metrics:metrics-json:jar:3.1.5/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/io.dropwizard.metrics:metrics-graphite:jar:3.1.5</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/io.dropwizard.metrics:metrics-graphite:jar:3.1.5/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.fasterxml.jackson.core:jackson-databind:jar:2.9.9</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.fasterxml.jackson.module:jackson-module-scala_2.12:jar:2.6.7.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.fasterxml.jackson.module:jackson-module-scala_2.12:jar:2.6.7.1/org.scala-lang:scala-library:jar:2.12.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.fasterxml.jackson.module:jackson-module-scala_2.12:jar:2.6.7.1/org.scala-lang:scala-reflect:jar:2.12.1</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.fasterxml.jackson.module:jackson-module-scala_2.12:jar:2.6.7.1/org.scala-lang:scala-reflect:jar:2.12.1/org.scala-lang:scala-library:jar:2.12.8</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.fasterxml.jackson.module:jackson-module-scala_2.12:jar:2.6.7.1/com.fasterxml.jackson.core:jackson-core:jar:2.9.9</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.fasterxml.jackson.module:jackson-module-scala_2.12:jar:2.6.7.1/com.fasterxml.jackson.core:jackson-annotations:jar:2.9.0</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.fasterxml.jackson.module:jackson-module-scala_2.12:jar:2.6.7.1/com.fasterxml.jackson.core:jackson-databind:jar:2.6.7</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/com.fasterxml.jackson.module:jackson-module-scala_2.12:jar:2.6.7.1/com.fasterxml.jackson.module:jackson-module-paranamer:jar:2.7.9</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.ivy:ivy:jar:2.4.0</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/oro:oro:jar:2.0.8</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/net.razorvine:pyrolite:jar:4.13</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/net.sf.py4j:py4j:jar:0.10.7</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.spark:spark-tags_2.12:jar:2.4.3</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.apache.commons:commons-crypto:jar:1.0.0</node>
+            <node x="" y="">org.apache.spark:spark-core_2.12:jar:2.4.3/org.spark-project.spark:unused:jar:1.0.0</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scala-lang.modules:scala-parser-combinators_2.12:jar:1.1.0</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scala-lang.modules:scala-parser-combinators_2.12:jar:1.1.0/org.scala-lang:scala-library:jar:2.12.4</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-streaming_2.12:jar:2.4.3</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/com.univocity:univocity-parsers:jar:2.7.3</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.spark:spark-sketch_2.12:jar:2.4.3</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.spark:spark-catalyst_2.12:jar:2.4.3</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.spark:spark-catalyst_2.12:jar:2.4.3/org.scala-lang:scala-reflect:jar:2.12.8</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.spark:spark-catalyst_2.12:jar:2.4.3/org.codehaus.janino:janino:jar:3.0.9</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.spark:spark-catalyst_2.12:jar:2.4.3/org.codehaus.janino:commons-compiler:jar:3.0.9</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.spark:spark-catalyst_2.12:jar:2.4.3/org.antlr:antlr4-runtime:jar:4.7</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.orc:orc-core:jar:nohive:1.5.5</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.orc:orc-core:jar:nohive:1.5.5/org.apache.orc:orc-shims:jar:1.5.5</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.orc:orc-core:jar:nohive:1.5.5/org.apache.orc:orc-shims:jar:1.5.5/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.orc:orc-core:jar:nohive:1.5.5/com.google.protobuf:protobuf-java:jar:3.6.1</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.orc:orc-core:jar:nohive:1.5.5/io.airlift:aircompressor:jar:0.10</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.orc:orc-core:jar:nohive:1.5.5/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.orc:orc-mapreduce:jar:nohive:1.5.5</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.orc:orc-mapreduce:jar:nohive:1.5.5/commons-codec:commons-codec:jar:1.10</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.parquet:parquet-column:jar:1.10.1</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.parquet:parquet-column:jar:1.10.1/org.apache.parquet:parquet-common:jar:1.10.1</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.parquet:parquet-column:jar:1.10.1/org.apache.parquet:parquet-common:jar:1.10.1/org.slf4j:slf4j-api:jar:1.7.22</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.parquet:parquet-column:jar:1.10.1/org.apache.parquet:parquet-encoding:jar:1.10.1</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.parquet:parquet-hadoop:jar:1.10.1</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.parquet:parquet-hadoop:jar:1.10.1/org.apache.parquet:parquet-format:jar:2.4.0</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.parquet:parquet-hadoop:jar:1.10.1/org.apache.parquet:parquet-format:jar:2.4.0/org.slf4j:slf4j-api:jar:1.7.2</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.parquet:parquet-hadoop:jar:1.10.1/org.apache.parquet:parquet-jackson:jar:1.10.1</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.parquet:parquet-hadoop:jar:1.10.1/org.xerial.snappy:snappy-java:jar:1.1.2.6</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/com.fasterxml.jackson.core:jackson-databind:jar:2.9.9</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.arrow:arrow-vector:jar:0.10.0</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.arrow:arrow-vector:jar:0.10.0/org.apache.arrow:arrow-format:jar:0.10.0</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.arrow:arrow-vector:jar:0.10.0/org.apache.arrow:arrow-memory:jar:0.10.0</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.arrow:arrow-vector:jar:0.10.0/org.apache.arrow:arrow-memory:jar:0.10.0/com.google.code.findbugs:jsr305:jar:3.0.2</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.arrow:arrow-vector:jar:0.10.0/org.apache.arrow:arrow-memory:jar:0.10.0/org.slf4j:slf4j-api:jar:1.7.25</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.arrow:arrow-vector:jar:0.10.0/joda-time:joda-time:jar:2.9.9</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.arrow:arrow-vector:jar:0.10.0/com.fasterxml.jackson.core:jackson-core:jar:2.7.9</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.arrow:arrow-vector:jar:0.10.0/com.carrotsearch:hppc:jar:0.7.2</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.arrow:arrow-vector:jar:0.10.0/com.vlkan:flatbuffers:jar:1.2.0-3f79e055</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.arrow:arrow-vector:jar:0.10.0/com.google.code.findbugs:jsr305:jar:1.3.9</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-sql_2.12:jar:2.4.3/org.apache.arrow:arrow-vector:jar:0.10.0/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-graphx_2.12:jar:2.4.3</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-graphx_2.12:jar:2.4.3/com.github.fommil.netlib:core:jar:1.1.2</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-graphx_2.12:jar:2.4.3/net.sourceforge.f2j:arpack_combined_all:jar:0.1</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.apache.spark:spark-mllib-local_2.12:jar:2.4.3</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scalanlp:breeze_2.12:jar:0.13.2</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scalanlp:breeze_2.12:jar:0.13.2/org.scala-lang:scala-library:jar:2.12.8</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scalanlp:breeze_2.12:jar:0.13.2/org.scalanlp:breeze-macros_2.12:jar:0.13.2</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scalanlp:breeze_2.12:jar:0.13.2/org.scalanlp:breeze-macros_2.12:jar:0.13.2/org.scala-lang:scala-library:jar:2.12.8</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scalanlp:breeze_2.12:jar:0.13.2/net.sf.opencsv:opencsv:jar:2.3</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scalanlp:breeze_2.12:jar:0.13.2/com.github.rwl:jtransforms:jar:2.4.0</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scalanlp:breeze_2.12:jar:0.13.2/org.spire-math:spire_2.12:jar:0.13.0</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scalanlp:breeze_2.12:jar:0.13.2/org.spire-math:spire_2.12:jar:0.13.0/org.scala-lang:scala-library:jar:2.12.8</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scalanlp:breeze_2.12:jar:0.13.2/org.spire-math:spire_2.12:jar:0.13.0/org.spire-math:spire-macros_2.12:jar:0.13.0</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scalanlp:breeze_2.12:jar:0.13.2/org.spire-math:spire_2.12:jar:0.13.0/org.spire-math:spire-macros_2.12:jar:0.13.0/org.scala-lang:scala-library:jar:2.12.8</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scalanlp:breeze_2.12:jar:0.13.2/org.spire-math:spire_2.12:jar:0.13.0/org.typelevel:machinist_2.12:jar:0.6.1</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scalanlp:breeze_2.12:jar:0.13.2/org.spire-math:spire_2.12:jar:0.13.0/org.typelevel:machinist_2.12:jar:0.6.1/org.scala-lang:scala-library:jar:2.12.8</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scalanlp:breeze_2.12:jar:0.13.2/org.spire-math:spire_2.12:jar:0.13.0/org.typelevel:machinist_2.12:jar:0.6.1/org.scala-lang:scala-reflect:jar:2.12.0</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scalanlp:breeze_2.12:jar:0.13.2/com.chuusai:shapeless_2.12:jar:2.3.2</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scalanlp:breeze_2.12:jar:0.13.2/com.chuusai:shapeless_2.12:jar:2.3.2/org.scala-lang:scala-library:jar:2.12.8</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scalanlp:breeze_2.12:jar:0.13.2/com.chuusai:shapeless_2.12:jar:2.3.2/org.typelevel:macro-compat_2.12:jar:1.1.1</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scalanlp:breeze_2.12:jar:0.13.2/com.chuusai:shapeless_2.12:jar:2.3.2/org.typelevel:macro-compat_2.12:jar:1.1.1/org.scala-lang:scala-library:jar:2.12.8</node>
+            <node x="" y="">org.apache.spark:spark-mllib_2.12:jar:2.4.3/org.scalanlp:breeze_2.12:jar:0.13.2/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">junit:junit:jar:4.12</node>
+            <node x="" y="">junit:junit:jar:4.12/org.hamcrest:hamcrest-core:jar:1.3</node>
+            <node x="" y="">ch.qos.logback:logback-classic:jar:1.1.11</node>
+            <node x="" y="">ch.qos.logback:logback-classic:jar:1.1.11/ch.qos.logback:logback-core:jar:1.1.11</node>
+            <node x="" y="">ch.qos.logback:logback-classic:jar:1.1.11/org.slf4j:slf4j-api:jar:1.7.16</node>
+            <node x="" y="">mysql:mysql-connector-java:jar:8.0.16</node>
+            <node x="" y="">mysql:mysql-connector-java:jar:8.0.16/com.google.protobuf:protobuf-java:jar:3.6.1</node>
+            <node x="" y="">com.mchange:c3p0:jar:0.9.5.3</node>
+            <node x="" y="">com.mchange:c3p0:jar:0.9.5.3/com.mchange:mchange-commons-java:jar:0.2.15</node>
+            <node x="" y="">org.mybatis:mybatis:jar:3.4.6</node>
+            <node x="" y="">org.mybatis:mybatis-spring:jar:1.3.2</node>
+            <node x="" y="">taglibs:standard:jar:1.1.2</node>
+            <node x="" y="">javax.servlet:jstl:jar:1.1.2</node>
+            <node x="" y="">javax.servlet:javax.servlet-api:jar:4.0.1</node>
+            <node x="" y="">org.springframework:spring-core:jar:4.3.18.RELEASE</node>
+            <node x="" y="">org.springframework:spring-core:jar:4.3.18.RELEASE/commons-logging:commons-logging:jar:1.2</node>
+            <node x="" y="">org.springframework:spring-beans:jar:4.3.18.RELEASE</node>
+            <node x="" y="">org.springframework:spring-context:jar:4.3.18.RELEASE</node>
+            <node x="" y="">org.springframework:spring-context:jar:4.3.18.RELEASE/org.springframework:spring-aop:jar:4.3.18.RELEASE</node>
+            <node x="" y="">org.springframework:spring-context:jar:4.3.18.RELEASE/org.springframework:spring-expression:jar:4.3.18.RELEASE</node>
+            <node x="" y="">org.springframework:spring-jdbc:jar:4.3.18.RELEASE</node>
+            <node x="" y="">org.springframework:spring-tx:jar:4.3.18.RELEASE</node>
+            <node x="" y="">org.springframework:spring-web:jar:4.3.18.RELEASE</node>
+            <node x="" y="">org.springframework:spring-webmvc:jar:4.3.18.RELEASE</node>
+            <node x="" y="">org.springframework:spring-test:jar:4.3.18.RELEASE</node>
+            <node x="" y="">com.fasterxml.jackson.core:jackson-core:jar:2.9.9</node>
+            <node x="" y="">com.fasterxml.jackson.core:jackson-databind:jar:2.9.9</node>
+            <node x="" y="">com.fasterxml.jackson.core:jackson-databind:jar:2.9.9/com.fasterxml.jackson.core:jackson-annotations:jar:2.9.0</node>
+            <node x="" y="">org.apache.commons:commons-lang3:jar:3.7</node>
+            <node x="" y="">commons-io:commons-io:jar:1.3.2</node>
+            <node x="" y="">commons-net:commons-net:jar:3.6</node>
+            <node x="" y="">org.apache.httpcomponents:httpclient:jar:4.5.6</node>
+            <node x="" y="">org.apache.httpcomponents:httpclient:jar:4.5.6/commons-codec:commons-codec:jar:1.10</node>
+            <node x="" y="">org.apache.httpcomponents:httpcore:jar:4.4.10</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.1" x="7919.0" y="3259.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>All</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/sql/scheme.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/scu/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="14" column="76" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="76" />
+        <state relative-caret-position="837">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-service.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
-          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Untitled.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="44" selection-start-line="44" selection-start-column="4" selection-end-line="50" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1020" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
@@ -431,16 +1236,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/sqldialects.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/sql/scheme.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/scu/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-630">
-          <caret line="190" column="52" selection-start-line="190" selection-start-column="47" selection-end-line="190" selection-end-column="52" />
+        <state relative-caret-position="540">
+          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/cn/edu/scu/dao/UserDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3.jar!/META-INF/maven/org.apache.spark/spark-core_2.12/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3034">
+          <caret line="290" column="17" lean-forward="true" selection-start-line="290" selection-start-column="17" selection-end-line="290" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1053">
+          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/scu/controller/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#756#757#0" expanded="true" />
+            <element signature="e#787#788#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/edu/scu/service/SparkTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="138" column="21" selection-start-line="138" selection-start-column="21" selection-end-line="138" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -453,8 +1312,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        <state relative-caret-position="216">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -464,10 +1323,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>Untitled:war exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
