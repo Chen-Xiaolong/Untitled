@@ -3,7 +3,7 @@ package cn.edu.scu.entity;
 import java.util.Date;
 
 public class User {
-    private long userId;
+    private int userId;
 
     private Date userRegisterTime;
 
@@ -25,11 +25,11 @@ public class User {
                 '}';
     }
 
-    public long getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 

@@ -1,7 +1,6 @@
 package cn.edu.scu.service;
 
 import org.apache.spark.api.java.JavaPairRDD;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -13,7 +12,8 @@ import org.apache.spark.api.java.JavaSparkContext;
 
 @Service
 public class SparkTest {
-    private SparkConf conf = new SparkConf().setMaster("local").setAppName("MapPractice");
+    private SparkConf conf = new SparkConf().setMaster("local").setAppName("MapPractice").set("spark.testing.memory", "838860800");
+
     private JavaSparkContext ctx = new JavaSparkContext(conf);
 
     public String test() {
