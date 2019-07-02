@@ -21,8 +21,6 @@ public class User {
                 "userId=" + userId +
                 ", userRegisterTime=" + userRegisterTime +
                 ", userName='" + userName + '\'' +
-                ", userPasswordHash='" + userPasswordHash + '\'' +
-                ", userPasswordSalt='" + userPasswordSalt + '\'' +
                 ", userPhone='" + userPhone + '\'' +
                 '}';
     }
