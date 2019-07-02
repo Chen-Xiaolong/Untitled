@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.scu.dao.EmploymentDao">
+    <insert id="insertOne">
+        INSERT IGNORE INTO employment (employment_id, duty_id, skill_id)
+        VALUES (#{employmentId}, #{dutyId}, #{skillId})
+    </insert>
+
+    <select id="queryByEmploymentId" resultType="Employment">
+        SELECT employment_id,
+               duty_id,
+               skill_id
+        FROM employment
+        WHERE employment_id = #{employmentId}
+    </select>
+
+    <select id="queryByDutyId" resultType="Employment">
+        SELECT employment_id,
+               duty_id,
+               skill_id
+        FROM employment
+        WHERE duty_id = #{dutyId}
+    </select>
+
+    <select id="queryBySkillId" resultType="Employment">
+        SELECT employment_id,
+               duty_id,
+               skill_id
+        FROM employment
+        WHERE skill_id = #{skillId}
+    </select>
+
+</mapper>

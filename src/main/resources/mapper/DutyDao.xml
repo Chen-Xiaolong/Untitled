@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.scu.dao.DutyDao">
+    <insert id="insertOne">
+        INSERT IGNORE INTO duty (duty_name)
+        VALUES (#{dutyName})
+    </insert>
+
+    <select id="queryByDutyId" resultType="Duty">
+        SELECT duty_id,
+               duty_name
+        FROM duty
+        WHERE duty_id = #{dutyId}
+    </select>
+
+    <select id="queryByDutyName" resultType="Duty">
+        SELECT duty_id,
+               duty_name
+        FROM duty
+        WHERE duty_name = #{dutyName}
+    </select>
+
+</mapper>

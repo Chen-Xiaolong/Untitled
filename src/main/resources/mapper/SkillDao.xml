@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.scu.dao.SkillDao">
+    <insert id="insertOne">
+        INSERT IGNORE INTO skill (skill_name)
+        VALUES (#{skillName})
+    </insert>
+
+    <select id="queryBySkillId" resultType="Skill">
+        SELECT skill_id,
+               skill_name
+        FROM skill
+        WHERE skill_id = #{skillId}
+    </select>
+
+    <select id="queryBySkillName" resultType="Skill">
+        SELECT skill_id,
+               skill_name
+        FROM skill
+        WHERE skill_name = #{skillName}
+    </select>
+
+</mapper>
