@@ -32,4 +32,8 @@
         WHERE skill_id = #{skillId}
     </select>
 
+    <select id="getMaxIndex" resultType="int">
+        SELECT MAX(DISTINCT employment_id)
+        FROM employment
+    </select>
 </mapper>

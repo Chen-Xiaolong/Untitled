@@ -1,8 +1,12 @@
 package cn.edu.scu.service.Impl;
 
+import cn.edu.scu.dao.SkillDao;
 import cn.edu.scu.dao.UserDao;
+import cn.edu.scu.dao.UserSkillDao;
 import cn.edu.scu.dto.UserResult;
+import cn.edu.scu.entity.Skill;
 import cn.edu.scu.entity.User;
+import cn.edu.scu.entity.UserSkill;
 import cn.edu.scu.enums.UserResultEnum;
 import cn.edu.scu.service.UserService;
 import cn.edu.scu.util.CreateMd5;
@@ -10,11 +14,21 @@ import cn.edu.scu.util.CreateSalt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDao userDao;
+
+    @Autowired
+    private SkillDao skillDao;
+
+    @Autowired
+    private UserSkillDao userSkillDao;
 
     @Autowired
     private CreateSalt createSalt;
@@ -24,7 +38,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResult register(String username, String password) {
-        if(username.length() < 5||password.equals("")){
+        if (username.length() < 5 || password.equals("")) {
             return new UserResult(UserResultEnum.INSUFFICIENT_PARAMETERS);
         }
         int result = userDao.selectCountByUserName(username);
@@ -43,7 +57,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResult login(String username, String password) {
-        if(username.equals("")||password.equals("")){
+        if (username.equals("") || password.equals("")) {
             return new UserResult(UserResultEnum.INSUFFICIENT_PARAMETERS);
         }
         int result = userDao.selectCountByUserName(username);
@@ -62,6 +76,52 @@ public class UserServiceImpl implements UserService {
 //                        createMd5.getMd5ByTwoParameter(username, userPasswordHash), user);
                 return new UserResult(UserResultEnum.LOGIN_SUCCESS, user);
             }
+        }
+    }
+
+    @Override
+    public UserResult addSkill(String name, String hash, String skillName) {
+        User user = userDao.selectByUserName(name);
+        Skill skill = skillDao.queryBySkillName(skillName);
+        if(skill == null || user == null){
+            return new UserResult(UserResultEnum.UNKNOWN_ERROR);
+        }
+        if(isLogin(name, hash)){
+            return new UserResult(UserResultEnum.UNLOGINED);
+        } else {
+            int result = userSkillDao.insertOne(user.getUserId(), skill.getSkillId());
+            if(result == 0){
+                return new UserResult(UserResultEnum.SKILL_DUPLICATED);
+            } else {
+                return new UserResult(UserResultEnum.OPERATION_SUCCESS);
+            }
+        }
+    }
+
+    @Override
+    public UserResult querySkill(String name, String hash) {
+        List<String> skills = new ArrayList<>();
+        User user = userDao.selectByUserName(name);
+        if(user == null || isLogin(name, hash)){
+            return new UserResult(UserResultEnum.UNLOGINED, (String[])skills.toArray());
+        } else {
+            List<UserSkill> userSkills = userSkillDao.queryByUserId(user.getUserId());
+            for (UserSkill userSkill : userSkills) {
+                skills.add(skillDao.queryBySkillId(userSkill.getSkillId()).getSkillName());
+            }
+            return new UserResult(UserResultEnum.OPERATION_SUCCESS, (String[])skills.toArray());
+        }
+    }
+
+    private boolean isLogin(String name, String hash) {
+        if (name.equals("") || hash.equals(""))
+            return false;
+        int result = userDao.selectCountByUserName(name);
+        if (result != 1) {
+            return false;
+        } else {
+            User user = userDao.selectByUserName(name);
+            return createMd5.getMd5ByTwoParameter(name, user.getUserPasswordHash()).equals(hash);
         }
     }
 }

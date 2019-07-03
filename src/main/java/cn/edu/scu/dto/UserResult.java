@@ -3,12 +3,16 @@ package cn.edu.scu.dto;
 import cn.edu.scu.entity.User;
 import cn.edu.scu.enums.UserResultEnum;
 
+import java.util.Arrays;
+
 public class UserResult {
     private int status;
 
     private String info;
 
     private User user;
+
+    private String[] list;
 
     public UserResult(int status, String info) {
         this.status = status;
@@ -24,6 +28,12 @@ public class UserResult {
         this.status = userResultEnum.getStatus();
         this.info = userResultEnum.getInfo();
         this.user = user;
+    }
+
+    public UserResult(UserResultEnum userResultEnum, String[] list) {
+        this.status = userResultEnum.getStatus();
+        this.info = userResultEnum.getInfo();
+        this.list = list;
     }
 
     public UserResult(int status, String info, User user) {
@@ -56,12 +66,21 @@ public class UserResult {
         this.user = user;
     }
 
+    public String[] getList() {
+        return list;
+    }
+
+    public void setList(String[] list) {
+        this.list = list;
+    }
+
     @Override
     public String toString() {
         return "UserResult{" +
                 "status=" + status +
                 ", info='" + info + '\'' +
                 ", user=" + user +
+                ", list=" + Arrays.toString(list) +
                 '}';
     }
 }

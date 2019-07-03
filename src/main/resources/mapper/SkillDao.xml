@@ -22,4 +22,10 @@
         WHERE skill_name = #{skillName}
     </select>
 
+    <select id="queryAll" resultType="Skill">
+        SELECT skill_id,
+               skill_name
+        FROM skill
+    </select>
+
 </mapper>

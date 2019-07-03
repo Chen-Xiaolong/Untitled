@@ -32,7 +32,7 @@ CREATE TABLE `admin`
     PRIMARY KEY (`user_id`),
     INDEX (`user_name`)
 ) ENGINE = InnoDB
-  AUTO_INCREMENT = 1
+  AUTO_INCREMENT = 100000
   DEFAULT CHARSET = utf8mb4;
 
 CREATE TABLE `duty`
@@ -42,7 +42,17 @@ CREATE TABLE `duty`
     PRIMARY KEY (`duty_id`),
     INDEX (`duty_name`)
 ) ENGINE = InnoDB
-  AUTO_INCREMENT = 1
+  AUTO_INCREMENT = 0
+  DEFAULT CHARSET = utf8mb4;
+
+CREATE TABLE `keyword`
+(
+    `keyword_id`   int UNSIGNED NOT NULL AUTO_INCREMENT,
+    `keyword_name` varchar(20)  NOT NULL UNIQUE,
+    PRIMARY KEY (`keyword_id`),
+    INDEX (`keyword_name`)
+) ENGINE = InnoDB
+  AUTO_INCREMENT = 0
   DEFAULT CHARSET = utf8mb4;
 
 CREATE TABLE `skill`
@@ -52,7 +62,7 @@ CREATE TABLE `skill`
     PRIMARY KEY (`skill_id`),
     INDEX (`skill_name`)
 ) ENGINE = InnoDB
-  AUTO_INCREMENT = 1
+  AUTO_INCREMENT = 0
   DEFAULT CHARSET = utf8mb4;
 
 CREATE TABLE `employment`
@@ -62,6 +72,16 @@ CREATE TABLE `employment`
     `skill_id`      int UNSIGNED NOT NULL,
     PRIMARY KEY (`employment_id`, `duty_id`, `skill_id`),
     FOREIGN KEY (`duty_id`) REFERENCES duty (`duty_id`),
+    FOREIGN KEY (`skill_id`) REFERENCES skill (`skill_id`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;
+
+CREATE TABLE `user_skill`
+(
+    `user_id`  int UNSIGNED NOT NULL,
+    `skill_id` int UNSIGNED NOT NULL,
+    PRIMARY KEY (`user_id`, `skill_id`),
+    FOREIGN KEY (`user_id`) REFERENCES user (`user_id`),
     FOREIGN KEY (`skill_id`) REFERENCES skill (`skill_id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

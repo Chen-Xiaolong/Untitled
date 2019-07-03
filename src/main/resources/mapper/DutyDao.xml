@@ -22,4 +22,10 @@
         WHERE duty_name = #{dutyName}
     </select>
 
+    <select id="queryAll" resultType="Duty">
+        SELECT duty_id,
+               duty_name
+        FROM duty
+    </select>
+
 </mapper>

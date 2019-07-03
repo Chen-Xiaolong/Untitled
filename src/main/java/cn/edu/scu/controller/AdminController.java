@@ -22,15 +22,6 @@ public class AdminController {
     @Autowired
     private CreateMd5 createMd5;
 
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
-    @ResponseBody
-    public UserResult register(HttpServletRequest request, HttpServletResponse response) {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String phone = request.getParameter("phone");
-        return adminService.register(username, password);
-    }
-
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
     public UserResult login(HttpServletRequest request, HttpServletResponse response) {
@@ -40,12 +31,31 @@ public class AdminController {
         if (userResult.getStatus() == 1) {
             String hash = createMd5.getMd5ByTwoParameter(userResult.getUser().getUserName(), userResult.getUser().getUserPasswordHash());
             Cookie cookie = new Cookie("username",username);
-            cookie.setPath("/");
+            cookie.setPath("/admin");
             response.addCookie(cookie);
             cookie = new Cookie("hash",hash);
-            cookie.setPath("/");
+            cookie.setPath("/admin");
             response.addCookie(cookie);
         }
         return userResult;
+    }
+
+    @RequestMapping(value = "/addEmployment", method = RequestMethod.POST)
+    @ResponseBody
+    public UserResult addEmployment(HttpServletRequest request, HttpServletResponse response) {
+        Cookie[] cookies = request.getCookies();
+        String username = "";
+        String hash = "";
+        for (Cookie cookie : cookies) {
+            if(cookie.getName().equals("username")){
+                username = cookie.getValue();
+            } else if (cookie.getName().equals("hash")){
+                hash = cookie.getValue();
+            }
+        }
+        String duty = request.getParameter("duty");
+        String[] skill = request.getParameter("skill").split(",");
+        return adminService.addEmployment(username, hash, duty, skill);
+
     }
 }

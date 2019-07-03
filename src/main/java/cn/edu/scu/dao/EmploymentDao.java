@@ -13,5 +13,5 @@ public interface EmploymentDao {
 
     Employment queryBySkillId(@Param("skillId") int skillId);
 
-
+    int getMaxIndex();
 }

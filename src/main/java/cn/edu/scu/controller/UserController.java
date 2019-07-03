@@ -40,12 +40,45 @@ public class UserController {
         if (userResult.getStatus() == 1) {
             String hash = createMd5.getMd5ByTwoParameter(userResult.getUser().getUserName(), userResult.getUser().getUserPasswordHash());
             Cookie cookie = new Cookie("username",username);
-            cookie.setPath("/");
+            cookie.setPath("/user");
             response.addCookie(cookie);
             cookie = new Cookie("hash",hash);
-            cookie.setPath("/");
+            cookie.setPath("/user");
             response.addCookie(cookie);
         }
         return userResult;
+    }
+
+    @RequestMapping(value = "/querySkill", method = RequestMethod.POST)
+    @ResponseBody
+    public UserResult querySkill(HttpServletRequest request, HttpServletResponse response) {
+        Cookie[] cookies = request.getCookies();
+        String username = "";
+        String hash = "";
+        for (Cookie cookie : cookies) {
+            if(cookie.getName().equals("username")){
+                username = cookie.getValue();
+            } else if (cookie.getName().equals("hash")){
+                hash = cookie.getValue();
+            }
+        }
+        return userService.querySkill(username, hash);
+    }
+
+    @RequestMapping(value = "/addSkill", method = RequestMethod.POST)
+    @ResponseBody
+    public UserResult addSkill(HttpServletRequest request, HttpServletResponse response) {
+        Cookie[] cookies = request.getCookies();
+        String username = "";
+        String hash = "";
+        for (Cookie cookie : cookies) {
+            if(cookie.getName().equals("username")){
+                username = cookie.getValue();
+            } else if (cookie.getName().equals("hash")){
+                hash = cookie.getValue();
+            }
+        }
+        String skill = request.getParameter("skill");
+        return userService.addSkill(username, hash, skill);
     }
 }
