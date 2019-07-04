@@ -69,8 +69,8 @@ public class UserServiceImpl implements UserService {
                     createMd5.getMd5ByTwoParameter(password, user.getUserPasswordSalt()))) {
                 return new UserResult(UserResultEnum.LOGIN_FAIL);
             } else {
-                user.setUserPasswordHash("");
-                user.setUserPasswordSalt("");
+//                user.setUserPasswordHash("");
+//                user.setUserPasswordSalt("");
 //                String userPasswordHash = user.getUserPasswordHash();
 //                return new UserResult(1,
 //                        createMd5.getMd5ByTwoParameter(username, userPasswordHash), user);
@@ -80,7 +80,27 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserResult addSkill(String name, String hash, String skillName) {
+    public UserResult addSkill(String name, String hash, String[] skillNames) {
+        if(!isLogin(name, hash)){
+            return new UserResult(UserResultEnum.UNLOGINED);
+        }
+        User user = userDao.selectByUserName(name);
+        if(skillNames != null)
+            for (String skillName : skillNames) {
+                Skill skill = skillDao.queryBySkillName(skillTrim(skillName));
+                if(skill == null){
+                    return new UserResult(UserResultEnum.UNKNOWN_ERROR);
+                }
+                int result = userSkillDao.insertOne(user.getUserId(), skill.getSkillId());
+                if(result == 0){
+                    return new UserResult(UserResultEnum.SKILL_DUPLICATED);
+                }
+            }
+        return new UserResult(UserResultEnum.OPERATION_SUCCESS);
+    }
+
+    @Override
+    public UserResult deleteSkill(String name, String hash, String skillName) {
         User user = userDao.selectByUserName(name);
         Skill skill = skillDao.queryBySkillName(skillName);
         if(skill == null || user == null){
@@ -89,9 +109,9 @@ public class UserServiceImpl implements UserService {
         if(isLogin(name, hash)){
             return new UserResult(UserResultEnum.UNLOGINED);
         } else {
-            int result = userSkillDao.insertOne(user.getUserId(), skill.getSkillId());
+            int result = userSkillDao.deleteOne(user.getUserId(), skill.getSkillId());
             if(result == 0){
-                return new UserResult(UserResultEnum.SKILL_DUPLICATED);
+                return new UserResult(UserResultEnum.UNKNOWN_ERROR);
             } else {
                 return new UserResult(UserResultEnum.OPERATION_SUCCESS);
             }
@@ -100,17 +120,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResult querySkill(String name, String hash) {
+        if(!isLogin(name, hash)){
+            return new UserResult(UserResultEnum.UNLOGINED);
+        }
         List<String> skills = new ArrayList<>();
         User user = userDao.selectByUserName(name);
-        if(user == null || isLogin(name, hash)){
-            return new UserResult(UserResultEnum.UNLOGINED, (String[])skills.toArray());
-        } else {
-            List<UserSkill> userSkills = userSkillDao.queryByUserId(user.getUserId());
-            for (UserSkill userSkill : userSkills) {
-                skills.add(skillDao.queryBySkillId(userSkill.getSkillId()).getSkillName());
-            }
-            return new UserResult(UserResultEnum.OPERATION_SUCCESS, (String[])skills.toArray());
+        List<UserSkill> userSkills = userSkillDao.queryByUserId(user.getUserId());
+        for (UserSkill userSkill : userSkills) {
+            skills.add(skillDao.queryBySkillId(userSkill.getSkillId()).getSkillName());
         }
+        return new UserResult(UserResultEnum.OPERATION_SUCCESS, Arrays.toString(skills.toArray()));
     }
 
     private boolean isLogin(String name, String hash) {
@@ -121,7 +140,18 @@ public class UserServiceImpl implements UserService {
             return false;
         } else {
             User user = userDao.selectByUserName(name);
-            return createMd5.getMd5ByTwoParameter(name, user.getUserPasswordHash()).equals(hash);
+//            System.out.println(createMd5.getMd5ByTwoParameter(user.getUserName(), user.getUserPasswordHash()));
+//            System.out.println(hash);
+//            System.out.println(createMd5.getMd5ByTwoParameter(user.getUserName(), user.getUserPasswordHash()).equals(hash));
+            return createMd5.getMd5ByTwoParameter(user.getUserName(), user.getUserPasswordHash()).equals(hash);
         }
+    }
+
+    private String skillTrim(String skill){
+        if(skill.startsWith("["))
+            skill = skill.substring(1);
+        if(skill.endsWith("]"))
+            skill = skill.substring(0, skill.length()-1);
+        return skill.trim();
     }
 }

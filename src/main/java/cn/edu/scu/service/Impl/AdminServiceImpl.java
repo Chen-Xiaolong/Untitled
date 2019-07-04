@@ -70,8 +70,8 @@ public class AdminServiceImpl implements AdminService {
                     createMd5.getMd5ByTwoParameter(password, user.getUserPasswordSalt()))) {
                 return new UserResult(UserResultEnum.LOGIN_FAIL);
             } else {
-                user.setUserPasswordHash("");
-                user.setUserPasswordSalt("");
+//                user.setUserPasswordHash("");
+//                user.setUserPasswordSalt("");
 //                String userPasswordHash = user.getUserPasswordHash();
 //                return new UserResult(1,
 //                        createMd5.getMd5ByTwoParameter(username, userPasswordHash), user);
@@ -88,11 +88,12 @@ public class AdminServiceImpl implements AdminService {
         }
         int index = employmentDao.getMaxIndex()+1;
         int dutyId = dutyDao.queryByDutyName(duty).getDutyId();
-        for (String skill : skills) {
-            skill = skillTrim(skill);
-            int skillId = skillDao.queryBySkillName(skill).getSkillId();
-            employmentDao.insertOne(index, dutyId, skillId);
-        }
+        if(skills != null)
+            for (String skill : skills) {
+                skill = skillTrim(skill);
+                int skillId = skillDao.queryBySkillName(skill).getSkillId();
+                employmentDao.insertOne(index, dutyId, skillId);
+            }
         return new UserResult(UserResultEnum.OPERATION_SUCCESS);
     }
 

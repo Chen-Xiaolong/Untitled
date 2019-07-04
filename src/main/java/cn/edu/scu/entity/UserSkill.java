@@ -1,7 +1,9 @@
 package cn.edu.scu.entity;
 
 public class UserSkill {
+
     private int userId;
+
     private int skillId;
 
     public int getUserId() {

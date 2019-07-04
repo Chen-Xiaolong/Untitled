@@ -10,7 +10,9 @@ public interface UserService {
 
     UserResult login(String name, String password);
 
-    UserResult addSkill(String name, String hash, String skill);
+    UserResult addSkill(String name, String hash, String[] skillNames);
+
+    UserResult deleteSkill(String name, String hash, String skillName);
 
     UserResult querySkill(String name, String hash);
 }

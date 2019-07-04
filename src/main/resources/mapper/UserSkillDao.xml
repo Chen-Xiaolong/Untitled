@@ -8,14 +8,21 @@
         VALUES (#{userId}, #{skillId})
     </insert>
 
-    <select id="queryBySkillId" resultType="Skill">
+    <delete id="deleteOne">
+        DELETE
+        FROM user_skill
+        WHERE user_id = #{userId}
+          AND skill_id = #{skillId}
+    </delete>
+
+    <select id="queryBySkillId" resultType="UserSkill">
         SELECT user_id,
                skill_id
         FROM user_skill
         WHERE skill_id = #{skillId}
     </select>
 
-    <select id="queryByUserId" resultType="Skill">
+    <select id="queryByUserId" resultType="UserSkill">
         SELECT user_id,
                skill_id
         FROM user_skill

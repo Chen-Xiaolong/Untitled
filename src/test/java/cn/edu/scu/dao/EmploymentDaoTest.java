@@ -35,4 +35,9 @@ public class EmploymentDaoTest {
     public void getMaxIndex() {
         System.out.println(employmentDao.getMaxIndex());
     }
+
+    @Test
+    public void queryEmploymentIdByDutyId() {
+        System.out.println(employmentDao.queryEmploymentIdByDutyId(6));
+    }
 }

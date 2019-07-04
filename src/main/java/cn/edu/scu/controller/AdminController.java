@@ -30,11 +30,13 @@ public class AdminController {
         UserResult userResult = adminService.login(username, password);
         if (userResult.getStatus() == 1) {
             String hash = createMd5.getMd5ByTwoParameter(userResult.getUser().getUserName(), userResult.getUser().getUserPasswordHash());
+            userResult.getUser().setUserPasswordHash(null);
+            userResult.getUser().setUserPasswordSalt(null);
             Cookie cookie = new Cookie("username",username);
-            cookie.setPath("/admin");
+            cookie.setPath("/Untitled/admin/");
             response.addCookie(cookie);
             cookie = new Cookie("hash",hash);
-            cookie.setPath("/admin");
+            cookie.setPath("/Untitled/admin/");
             response.addCookie(cookie);
         }
         return userResult;
@@ -46,6 +48,10 @@ public class AdminController {
         Cookie[] cookies = request.getCookies();
         String username = "";
         String hash = "";
+        if(cookies == null || cookies.length == 0){
+            System.out.println(request.getHeader("cookie"));
+            return adminService.addEmployment(username, hash, "", null);
+        }
         for (Cookie cookie : cookies) {
             if(cookie.getName().equals("username")){
                 username = cookie.getValue();
@@ -54,8 +60,10 @@ public class AdminController {
             }
         }
         String duty = request.getParameter("duty");
-        String[] skill = request.getParameter("skill").split(",");
+        String all = request.getParameter("skill");
+        String[] skill = null;
+        if(all.length() > 0)
+            skill = all.split(",");
         return adminService.addEmployment(username, hash, duty, skill);
-
     }
 }

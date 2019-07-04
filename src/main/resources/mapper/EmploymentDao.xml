@@ -36,4 +36,10 @@
         SELECT MAX(DISTINCT employment_id)
         FROM employment
     </select>
+
+    <select id="queryEmploymentIdByDutyId" resultType="int">
+        SELECT DISTINCT employment_id
+        FROM employment
+        WHERE duty_id = #{dutyId}
+    </select>
 </mapper>

@@ -2,9 +2,10 @@ package cn.edu.scu.dto;
 
 import cn.edu.scu.entity.User;
 import cn.edu.scu.enums.UserResultEnum;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
-import java.util.Arrays;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserResult {
     private int status;
 
@@ -12,7 +13,7 @@ public class UserResult {
 
     private User user;
 
-    private String[] list;
+    private String list;
 
     public UserResult(int status, String info) {
         this.status = status;
@@ -30,7 +31,7 @@ public class UserResult {
         this.user = user;
     }
 
-    public UserResult(UserResultEnum userResultEnum, String[] list) {
+    public UserResult(UserResultEnum userResultEnum, String list) {
         this.status = userResultEnum.getStatus();
         this.info = userResultEnum.getInfo();
         this.list = list;
@@ -66,11 +67,11 @@ public class UserResult {
         this.user = user;
     }
 
-    public String[] getList() {
+    public String getList() {
         return list;
     }
 
-    public void setList(String[] list) {
+    public void setList(String list) {
         this.list = list;
     }
 
@@ -80,7 +81,7 @@ public class UserResult {
                 "status=" + status +
                 ", info='" + info + '\'' +
                 ", user=" + user +
-                ", list=" + Arrays.toString(list) +
+                ", list=" + list +
                 '}';
     }
 }
