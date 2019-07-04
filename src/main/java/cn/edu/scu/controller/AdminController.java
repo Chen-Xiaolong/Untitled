@@ -42,6 +42,20 @@ public class AdminController {
         return userResult;
     }
 
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    @ResponseBody
+    public void logout(HttpServletRequest request, HttpServletResponse response){
+        Cookie[] cookies = request.getCookies();
+        if(cookies != null){
+            for (Cookie cookie : cookies) {
+                if(cookie.getName().equals("username") || cookie.getName().equals("hash")){
+                    cookie.setMaxAge(0);
+                    response.addCookie(cookie);
+                }
+            }
+        }
+    }
+
     @RequestMapping(value = "/addEmployment", method = RequestMethod.POST)
     @ResponseBody
     public UserResult addEmployment(HttpServletRequest request, HttpServletResponse response) {
