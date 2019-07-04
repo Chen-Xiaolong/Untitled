@@ -82,8 +82,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public UserResult addEmployment(String name, String hash, String duty, String[] skills) {
-        User user = adminDao.selectByUserName(name);
-        if(user == null || isLogin(name, hash)){
+        if(!isLogin(name, hash)){
             return new UserResult(UserResultEnum.UNLOGINED);
         }
         int index = employmentDao.getMaxIndex()+1;

@@ -98,13 +98,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResult deleteSkill(String name, String hash, String skillName) {
+        if(!isLogin(name, hash)) {
+            return new UserResult(UserResultEnum.UNLOGINED);
+        }
         User user = userDao.selectByUserName(name);
         Skill skill = skillDao.queryBySkillName(skillName);
         if(skill == null || user == null){
             return new UserResult(UserResultEnum.UNKNOWN_ERROR);
-        }
-        if(isLogin(name, hash)){
-            return new UserResult(UserResultEnum.UNLOGINED);
         } else {
             int result = userSkillDao.deleteOne(user.getUserId(), skill.getSkillId());
             if(result == 0){
