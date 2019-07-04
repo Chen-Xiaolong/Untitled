@@ -9,7 +9,6 @@ public enum UserResultEnum {
     USERNAME_EXIST(-2,"用户名已存在"),
     INSUFFICIENT_PARAMETERS(-3, "参数不足"),
     UNLOGINED(-4, "未登录"),
-    SKILL_DUPLICATED(-5, "重复添加"),
 
     UNKNOWN_ERROR(-999,"未知错误"),
     ;

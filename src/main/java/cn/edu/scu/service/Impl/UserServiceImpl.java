@@ -91,10 +91,7 @@ public class UserServiceImpl implements UserService {
                 if(skill == null){
                     return new UserResult(UserResultEnum.UNKNOWN_ERROR);
                 }
-                int result = userSkillDao.insertOne(user.getUserId(), skill.getSkillId());
-                if(result == 0){
-                    return new UserResult(UserResultEnum.SKILL_DUPLICATED);
-                }
+                userSkillDao.insertOne(user.getUserId(), skill.getSkillId());
             }
         return new UserResult(UserResultEnum.OPERATION_SUCCESS);
     }
