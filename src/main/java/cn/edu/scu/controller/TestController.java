@@ -15,12 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping(value = "/test")
 public class TestController {
 
-    @Autowired
-    private SparkTest sparkTest;
-
-    @RequestMapping(value = "/spark", method = RequestMethod.GET)
-    @ResponseBody
-    public String register(HttpServletRequest request, HttpServletResponse response){
-        return sparkTest.test();
-    }
+//    @Autowired
+//    private SparkTest sparkTest;
+//
+//    @RequestMapping(value = "/spark", method = RequestMethod.GET)
+//    @ResponseBody
+//    public String register(HttpServletRequest request, HttpServletResponse response){
+//        return sparkTest.test();
+//    }
 }

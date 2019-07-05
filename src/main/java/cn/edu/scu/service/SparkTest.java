@@ -15,27 +15,27 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
 
-@Service
+//@Service
 public class SparkTest {
 
-    @Autowired
-    EmploymentDao employmentDao;
-
-    private SparkConf conf = new SparkConf().setMaster("local").setAppName("MapPractice").set("spark.testing.memory", "838860800");
-
-    private JavaSparkContext ctx = new JavaSparkContext(conf);
-
-    public String test() {
-        JavaRDD<Integer> arrRDD1 = ctx.parallelize(Arrays.asList(1, 2, 3, 4, 5));
-        JavaRDD<Integer> arrRDD2 = ctx.parallelize(Arrays.asList(4, 5, 6, 7, 8));
-        JavaPairRDD<Integer, Integer> result = arrRDD1.cartesian(arrRDD2);
-
-        List<Employment> employments = employmentDao.queryByDutyId(5);
-        List<String> all = new ArrayList<>();
-        for (Employment employment : employments) {
-            all.add(String.valueOf(employment.getSkillId()));
-        }
-
-        return Arrays.toString(all.toArray());
-    }
+//    @Autowired
+//    private EmploymentDao employmentDao;
+//
+//    private SparkConf conf = new SparkConf().setMaster("local").setAppName("MapPractice").set("spark.testing.memory", "838860800");
+//
+//    private JavaSparkContext ctx = new JavaSparkContext(conf);
+//
+//    public String test() {
+//        JavaRDD<Integer> arrRDD1 = ctx.parallelize(Arrays.asList(1, 2, 3, 4, 5));
+//        JavaRDD<Integer> arrRDD2 = ctx.parallelize(Arrays.asList(4, 5, 6, 7, 8));
+//        JavaPairRDD<Integer, Integer> result = arrRDD1.cartesian(arrRDD2);
+//
+//        List<Employment> employments = employmentDao.queryByDutyId(5);
+//        List<String> all = new ArrayList<>();
+//        for (Employment employment : employments) {
+//            all.add(String.valueOf(employment.getSkillId()));
+//        }
+//
+//        return Arrays.toString(all.toArray());
+//    }
 }

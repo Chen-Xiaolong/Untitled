@@ -1,6 +1,7 @@
 package cn.edu.scu.controller;
 
 import cn.edu.scu.dto.UserResult;
+import cn.edu.scu.service.Impl.SparkServiceImpl;
 import cn.edu.scu.service.UserService;
 import cn.edu.scu.util.CreateMd5;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,8 @@ public class UserController {
     private UserService userService;
     @Autowired
     private CreateMd5 createMd5;
+    @Autowired
+    private SparkServiceImpl sparkService;
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
@@ -134,5 +137,29 @@ public class UserController {
         }
         String skill = request.getParameter("skill");
         return userService.deleteSkill(username, hash, skill);
+    }
+
+    @RequestMapping(value = "/jobAnalyse", method = RequestMethod.POST)
+    @ResponseBody
+    public UserResult jobAnalyse(HttpServletRequest request, HttpServletResponse response){
+        Cookie[] cookies = request.getCookies();
+        String username = "";
+        String hash = "";
+        if(cookies == null || cookies.length == 0){
+            System.out.println(request.getHeader("cookie"));
+            return userService.deleteSkill(username, hash, "");
+        }
+        for (Cookie cookie : cookies) {
+            if(cookie.getName().equals("username")){
+                username = cookie.getValue();
+            } else if (cookie.getName().equals("hash")){
+                hash = cookie.getValue();
+            } else {
+                System.out.println("Cookie Name: "+cookie.getName());
+                System.out.println("Cookie Value: "+cookie.getValue());
+            }
+        }
+        String duty = request.getParameter("duty");
+        return sparkService.analyse(username, hash, duty);
     }
 }
