@@ -12,5 +12,7 @@ public interface SkillDao {
 
     Skill queryBySkillId(@Param("skillId") int skillId);
 
+    int queryCountBySkillName(@Param("skillName") String skillName);
+
     List<Skill> queryAll();
 }

@@ -10,4 +10,6 @@ public interface AdminService {
     UserResult login(String name, String password);
 
     UserResult addEmployment(String name, String hash, String duty, String[] skills);
+
+    UserResult createFPTreeModel(String name, String hash, String duty);
 }

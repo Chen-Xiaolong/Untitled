@@ -28,4 +28,10 @@
         FROM duty
     </select>
 
+    <select id="queryCountByDutyName" resultType="int">
+        SELECT count(DISTINCT duty_name)
+        FROM duty
+        WHERE duty_name = #{dutyName}
+    </select>
+
 </mapper>

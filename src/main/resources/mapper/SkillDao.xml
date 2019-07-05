@@ -28,4 +28,10 @@
         FROM skill
     </select>
 
+    <select id="queryCountBySkillName" resultType="int">
+        SELECT count(DISTINCT skill_name)
+        FROM skill
+        WHERE skill_name = #{skillName}
+    </select>
+
 </mapper>

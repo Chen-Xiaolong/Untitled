@@ -67,7 +67,7 @@ public class SparkServiceImpl {
 //                .setMinSupport(minSupport)
 //                .run(transactions);
         FPGrowthModel<String> model;
-        System.out.println(path);
+//        System.out.println(path);
         File file = new File(path+"model/FPTree/" + aimjob);
         if(file.exists()){
             model = (FPGrowthModel<String>)FPGrowthModel.load(sc.sc(), path+"model/FPTree/" + aimjob);
@@ -84,23 +84,68 @@ public class SparkServiceImpl {
         skillList=hSet;
         AssociationRules rule = new AssociationRules()
                 .setMinConfidence(0.15);
-        JavaRDD<? extends AssociationRules.Rule<?>> run = rule.run(model.freqItemsets().toJavaRDD());
+//        JavaRDD<? extends AssociationRules.Rule<?>> run = rule.run(model.freqItemsets().toJavaRDD());
 
         JavaRDD<AssociationRules.Rule<String>>result = rule.run(model.freqItemsets().toJavaRDD());
 
 //        result.foreach(x ->
 //                System.out.println(x));
+        boolean IsTCPIP=false;
+        for(String rex:skill)
+            if(rex.equals("TCP/IP"))IsTCPIP=true;
+        String combine = new String();
+        for(String rex:skill)
+            combine+=","+rex;
+
+        String[] confstr = new String[5];
+        Double[] confdou = new Double[5];
 
         List<AssociationRules.Rule<String>> newresult = result.collect();
         for(AssociationRules.Rule<String>x:newresult){
-            for(String st:skill)
-                if(x.javaAntecedent().toString().contains(st)){
-//                    String[] nlist =x.javaAntecedent().toString().split(",");
-                    String S=x.javaConsequent().toString();
-                    S=S.substring(1,S.length()-1);
-                    conSkillList.add(S);
+            if(judge(x.javaAntecedent().toString(),combine)){
+                double conf=x.confidence();
+                boolean flag=false;
+                String S=x.javaConsequent().toString();
+                S=S.substring(1,S.length()-1);
+                if(IsTCPIP==true&&S.equals("IP"))continue;
+                if(S.equals("计算机"))continue;
+                for(String j :skill){
+                    if(j.equals(S))
+                        flag=true;
                 }
+                if(flag==true)continue;
+                for(int i=0;i<5;i++)
+                    if(confstr[i]!=null&&confstr[i].equals(S)){
+                        flag=true;
+                        break;
+                    }
+                if(flag==true)continue;
+                for(int i=0;i<5;i++)
+                    if(confdou[i]==null){
+                        confdou[i]=conf;
+                        confstr[i]=S;
+                        flag=true;
+                        break;
+                    }
+                if(flag==true)continue;
+                double setmin=1.0;
+                int posmin=5;
+                for(int i=0;i<5;i++)
+                    if(confdou[i]<setmin){
+                        posmin=i;
+                        setmin=confdou[i];
+                    }
+                if(confdou[posmin]<conf){
+                    confdou[posmin]=conf;
+                    confstr[posmin]=S;
+                }
+            }
         }
+        for(int i=0;i<5;i++)
+            if(confstr[i]!=null){
+                conSkillList.add(confstr[i]);
+            }
+
         for(String x :skill){
             if(skillList.contains(x))
                 proSkillList.add(x);
@@ -108,7 +153,7 @@ public class SparkServiceImpl {
         return new UserResult(UserResultEnum.OPERATION_SUCCESS, proSkillList.toString() + "\n" + conSkillList.toString());
     }
 
-    private FPGrowthModel<String> createFPTreeModel(String aimjob){
+    public FPGrowthModel<String> createFPTreeModel(String aimjob){
         FPGrowthModel<String> model = null;
         try {
             JavaRDD<List<String>> transactions = sc.textFile(path+"data/"+aimjob+".txt")
@@ -124,13 +169,25 @@ public class SparkServiceImpl {
             model = new FPGrowth()
                     .setMinSupport(minSupport)
                     .run(transactions);
+            File file = new File(path+"model/FPTree/" + aimjob);
+            if(file.exists()){
+                delFile(file);
+            }
             model.save(sc.sc(), path+"model/FPTree/" + aimjob);
         } catch (Exception e){
             e.printStackTrace();
             return null;
         }
-        System.out.println("\n\nFPTree model create succeed!\n\n");
         return model;
+    }
+
+    private boolean judge(String connection,String combine){
+        String[] ret = connection.substring(1,connection.length()-1).split(", ");
+        for(String res:ret){
+            if(!combine.contains(res))
+                return false;
+        }
+        return true;
     }
 
     private boolean isLogin(String name, String hash) {
@@ -146,5 +203,19 @@ public class SparkServiceImpl {
 //            System.out.println(createMd5.getMd5ByTwoParameter(user.getUserName(), user.getUserPasswordHash()).equals(hash));
             return createMd5.getMd5ByTwoParameter(user.getUserName(), user.getUserPasswordHash()).equals(hash);
         }
+    }
+
+    private static boolean delFile(File file) {
+        if (!file.exists()) {
+            return false;
+        }
+
+        if (file.isDirectory()) {
+            File[] files = file.listFiles();
+            for (File f : files) {
+                delFile(f);
+            }
+        }
+        return file.delete();
     }
 }

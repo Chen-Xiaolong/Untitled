@@ -12,5 +12,7 @@ public interface DutyDao {
 
     Duty queryByDutyId(@Param("dutyId") int dutyId);
 
+    int queryCountByDutyName(@Param("dutyName") String dutyName);
+
     List<Duty> queryAll();
 }

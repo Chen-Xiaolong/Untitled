@@ -80,4 +80,25 @@ public class AdminController {
             skill = all.split(",");
         return adminService.addEmployment(username, hash, duty, skill);
     }
+
+    @RequestMapping(value = "/analyseModeling", method = RequestMethod.POST)
+    @ResponseBody
+    public UserResult analyseModeling(HttpServletRequest request, HttpServletResponse response) {
+        Cookie[] cookies = request.getCookies();
+        String username = "";
+        String hash = "";
+        if(cookies == null || cookies.length == 0){
+            System.out.println(request.getHeader("cookie"));
+            return adminService.createFPTreeModel(username, hash, "");
+        }
+        for (Cookie cookie : cookies) {
+            if(cookie.getName().equals("username")){
+                username = cookie.getValue();
+            } else if (cookie.getName().equals("hash")){
+                hash = cookie.getValue();
+            }
+        }
+        String duty = request.getParameter("duty");
+        return adminService.createFPTreeModel(username, hash, duty);
+    }
 }

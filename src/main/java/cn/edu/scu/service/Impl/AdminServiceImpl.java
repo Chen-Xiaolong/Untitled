@@ -5,7 +5,6 @@ import cn.edu.scu.dao.DutyDao;
 import cn.edu.scu.dao.EmploymentDao;
 import cn.edu.scu.dao.SkillDao;
 import cn.edu.scu.dto.UserResult;
-import cn.edu.scu.entity.Skill;
 import cn.edu.scu.entity.User;
 import cn.edu.scu.enums.UserResultEnum;
 import cn.edu.scu.service.AdminService;
@@ -14,7 +13,9 @@ import cn.edu.scu.util.CreateSalt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -23,7 +24,7 @@ public class AdminServiceImpl implements AdminService {
     private AdminDao adminDao;
 
     @Autowired
-    private EmploymentDao employmentDao;
+    private SparkServiceImpl sparkService;
 
     @Autowired
     private SkillDao skillDao;
@@ -36,6 +37,8 @@ public class AdminServiceImpl implements AdminService {
 
     @Autowired
     private CreateMd5 createMd5;
+
+    private String path = AdminServiceImpl.class.getClassLoader().getResource("").getPath();
 
     @Override
     public UserResult register(String username, String password) {
@@ -85,15 +88,61 @@ public class AdminServiceImpl implements AdminService {
         if(!isLogin(name, hash)){
             return new UserResult(UserResultEnum.UNLOGINED);
         }
-        int index = employmentDao.getMaxIndex()+1;
-        int dutyId = dutyDao.queryByDutyName(duty).getDutyId();
-        if(skills != null)
-            for (String skill : skills) {
-                skill = skillTrim(skill);
-                int skillId = skillDao.queryBySkillName(skill).getSkillId();
-                employmentDao.insertOne(index, dutyId, skillId);
+
+        File f = new File(path+"data/"+duty+".txt");
+        String buf = "";
+        try{
+            if (!f.exists()) {
+                f.createNewFile();// 不存在则创建
             }
+            BufferedWriter output = new BufferedWriter(new FileWriter(f,true));
+            if(dutyDao.queryCountByDutyName(duty)==0){
+                dutyDao.insertOne(duty);
+            }
+            buf += duty + ",";
+            if(skills != null){
+                for (String skill : skills){
+                    skill = skillTrim(skill);
+                    buf += skill + ",";
+                    if(skillDao.queryCountBySkillName(skill) == 0){
+                        skillDao.insertOne(skill);
+                    }
+                }
+            }
+            output.write(buf.substring(0, buf.length()-1) + "\n");
+            output.flush();
+            output.close();
+        } catch (Exception e){
+            e.printStackTrace();
+            return new UserResult(UserResultEnum.UNKNOWN_ERROR);
+        }
+
+//        int index = employmentDao.getMaxIndex()+1;
+//        int dutyId = dutyDao.queryByDutyName(duty).getDutyId();
+//        if(skills != null)
+//            for (String skill : skills) {
+//                skill = skillTrim(skill);
+//                Skill skill1 = skillDao.queryBySkillName(skill);
+//                if(skill != null){
+//                    employmentDao.insertOne(index, dutyId, skill1.getSkillId());
+//                }
+//
+//            }
+
+
         return new UserResult(UserResultEnum.OPERATION_SUCCESS);
+    }
+
+    @Override
+    public UserResult createFPTreeModel(String name, String hash, String duty) {
+        if(!isLogin(name, hash)){
+            return new UserResult(UserResultEnum.UNLOGINED);
+        }
+        if(sparkService.createFPTreeModel(duty) == null){
+            return new UserResult(UserResultEnum.UNKNOWN_ERROR);
+        } else {
+            return new UserResult(UserResultEnum.OPERATION_SUCCESS);
+        }
     }
 
     private boolean isLogin(String name, String hash) {
