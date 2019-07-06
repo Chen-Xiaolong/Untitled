@@ -215,9 +215,11 @@
     function deletebtn(id) {
     console.log(id);
             var z={};
-            var x=id.innerText;
-            console.log(x.trim());
-            z.skill=x.trim();
+            var x=id.innerText.trim().split("(")[0];
+            var xx=id.innerText.trim().split("(")[1].split(")")[0];
+            var s=x+":"+xx;
+            console.log(s);
+            z.skill=s;
             console.log(z);
             $.post("http://localhost:8080/Untitled/user/deleteSkill",
             z,

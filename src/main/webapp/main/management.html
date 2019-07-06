@@ -249,6 +249,9 @@
                 });
             }
         }
+        if (v.innerText==null){
+            v.innerText="操作失败!";
+        }
         w.appendChild(v);
     }
     function recom() {
@@ -293,7 +296,7 @@
                     function (data) {
                         console.log(data);
                         if (data.status==3){
-                            v.innerText="成功推荐数据:"+x[i];
+                            v.innerText="成功添加数据:"+x[i];
                         }
                         else {
                             v.innerText="添加数据："+x[i]+"失败";
