@@ -30,7 +30,6 @@ public class UserController {
     public UserResult register(HttpServletRequest request, HttpServletResponse response) {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String phone = request.getParameter("phone");
         return userService.register(username, password);
     }
 
@@ -147,19 +146,35 @@ public class UserController {
         String hash = "";
         if(cookies == null || cookies.length == 0){
             System.out.println(request.getHeader("cookie"));
-            return userService.deleteSkill(username, hash, "");
+            return sparkService.analyse(username, hash, "");
         }
         for (Cookie cookie : cookies) {
             if(cookie.getName().equals("username")){
                 username = cookie.getValue();
             } else if (cookie.getName().equals("hash")){
                 hash = cookie.getValue();
-            } else {
-                System.out.println("Cookie Name: "+cookie.getName());
-                System.out.println("Cookie Value: "+cookie.getValue());
             }
         }
         String duty = request.getParameter("duty");
         return sparkService.analyse(username, hash, duty);
+    }
+
+    @RequestMapping(value = "/jobRecommend", method = RequestMethod.POST)
+    @ResponseBody
+    public UserResult jobRecommend(HttpServletRequest request, HttpServletResponse response){
+        Cookie[] cookies = request.getCookies();
+        String username = "";
+        String hash = "";
+        if(cookies == null || cookies.length == 0){
+            return sparkService.recommend(username, hash);
+        }
+        for (Cookie cookie : cookies) {
+            if(cookie.getName().equals("username")){
+                username = cookie.getValue();
+            } else if (cookie.getName().equals("hash")){
+                hash = cookie.getValue();
+            }
+        }
+        return sparkService.recommend(username, hash);
     }
 }

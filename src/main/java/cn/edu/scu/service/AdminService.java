@@ -11,5 +11,11 @@ public interface AdminService {
 
     UserResult addEmployment(String name, String hash, String duty, String[] skills);
 
+    UserResult addDuty(String name, String hash, String duty, String description);
+
+    UserResult addSkill(String name, String hash, String[] skill);
+
     UserResult createFPTreeModel(String name, String hash, String duty);
+
+    UserResult createRecommendModel(String name, String hash);
 }

@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface UserSkillDao {
-    int insertOne(@Param("userId") int userId, @Param("skillId") int skillId);
+    int insertOne(@Param("userId") int userId, @Param("skillId") int skillId, @Param("proficiency") int proficiency);
 
     int deleteOne(@Param("userId") int userId, @Param("skillId") int skillId);
 

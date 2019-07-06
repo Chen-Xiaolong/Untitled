@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.scu.dao.UserSkillDao">
     <insert id="insertOne">
-        INSERT IGNORE INTO user_skill (user_id, skill_id)
-        VALUES (#{userId}, #{skillId})
+        INSERT IGNORE INTO user_skill (user_id, skill_id, proficiency)
+        VALUES (#{userId}, #{skillId}, #{proficiency})
     </insert>
 
     <delete id="deleteOne">
@@ -17,16 +17,18 @@
 
     <select id="queryBySkillId" resultType="UserSkill">
         SELECT user_id,
-               skill_id
+               skill_id,
+               proficiency
         FROM user_skill
         WHERE skill_id = #{skillId}
     </select>
 
     <select id="queryByUserId" resultType="UserSkill">
         SELECT user_id,
-               skill_id
+               skill_id,
+               proficiency
         FROM user_skill
-        WHERE user_id = #{userId}
+        WHERE user_id = #{userId} ORDER BY skill_id
     </select>
 
 </mapper>

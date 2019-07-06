@@ -89,29 +89,49 @@ public class AdminServiceImpl implements AdminService {
             return new UserResult(UserResultEnum.UNLOGINED);
         }
 
-        File f = new File(path+"data/"+duty+".txt");
-        String buf = "";
+        File f1 = new File(path+"data/"+duty+".txt");
+        File f2 = new File(path+"data/final_data.txt");
+        String buf1 = "";
+        String buf2 = "";
         try{
-            if (!f.exists()) {
-                f.createNewFile();// 不存在则创建
+            if (!f1.exists()) {
+                f1.createNewFile();// 不存在则创建
             }
-            BufferedWriter output = new BufferedWriter(new FileWriter(f,true));
-            if(dutyDao.queryCountByDutyName(duty)==0){
-                dutyDao.insertOne(duty);
+            BufferedWriter output1 = new BufferedWriter(new FileWriter(f1,true));
+            if(dutyDao.queryCountByDutyName(duty.trim())==0){
+                return new UserResult(UserResultEnum.UNKNOWN_ERROR);
             }
-            buf += duty + ",";
+            buf1 += duty + ",";
             if(skills != null){
                 for (String skill : skills){
                     skill = skillTrim(skill);
-                    buf += skill + ",";
+                    buf1 += skill + ",";
                     if(skillDao.queryCountBySkillName(skill) == 0){
                         skillDao.insertOne(skill);
                     }
                 }
+                output1.write(buf1.substring(0, buf1.length()-1) + "\n");
             }
-            output.write(buf.substring(0, buf.length()-1) + "\n");
-            output.flush();
-            output.close();
+            output1.flush();
+            output1.close();
+
+            BufferedWriter output2 = new BufferedWriter(new FileWriter(f2,true));
+            int dutyId = dutyDao.queryByDutyName(duty).getDutyId();
+            buf2 += dutyId-1 + " ";
+            if(skills != null){
+                for (String skill : skills){
+                    skill = skillTrim(skill);
+                    if(skillDao.queryCountBySkillName(skill) == 0){
+                        skillDao.insertOne(skill);
+                    }
+                    int skillId = skillDao.queryBySkillName(skill).getSkillId();
+                    buf2 += skillId + ":1 ";
+
+                }
+                output2.write(buf2.substring(0, buf1.length()-1) + "\n");
+            }
+            output2.flush();
+            output2.close();
         } catch (Exception e){
             e.printStackTrace();
             return new UserResult(UserResultEnum.UNKNOWN_ERROR);
@@ -143,6 +163,42 @@ public class AdminServiceImpl implements AdminService {
         } else {
             return new UserResult(UserResultEnum.OPERATION_SUCCESS);
         }
+    }
+
+    @Override
+    public UserResult createRecommendModel(String name, String hash){
+        if(!isLogin(name, hash)){
+            return new UserResult(UserResultEnum.UNLOGINED);
+        }
+        if(sparkService.createNaiveBayesModel() == null){
+            return new UserResult(UserResultEnum.UNKNOWN_ERROR);
+        } else {
+            return new UserResult(UserResultEnum.OPERATION_SUCCESS);
+        }
+    }
+
+    @Override
+    public UserResult addDuty(String name, String hash, String duty, String description) {
+        if(!isLogin(name, hash)){
+            return new UserResult(UserResultEnum.UNLOGINED);
+        }
+        int result = dutyDao.insertOne(skillTrim(duty), description);
+        if(result == 1){
+            return new UserResult(UserResultEnum.OPERATION_SUCCESS);
+        } else {
+            return new UserResult(UserResultEnum.UNKNOWN_ERROR);
+        }
+    }
+
+    @Override
+    public UserResult addSkill(String name, String hash, String[] skill) {
+        if(!isLogin(name, hash)){
+            return new UserResult(UserResultEnum.UNLOGINED);
+        }
+        for (String s : skill) {
+            skillDao.insertOne(skillTrim(s));
+        }
+        return new UserResult(UserResultEnum.OPERATION_SUCCESS);
     }
 
     private boolean isLogin(String name, String hash) {

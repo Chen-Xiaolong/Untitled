@@ -25,7 +25,7 @@
     <select id="queryAll" resultType="Skill">
         SELECT skill_id,
                skill_name
-        FROM skill
+        FROM skill ORDER BY skill_id
     </select>
 
     <select id="queryCountBySkillName" resultType="int">

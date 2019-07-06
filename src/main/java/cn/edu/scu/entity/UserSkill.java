@@ -6,6 +6,8 @@ public class UserSkill {
 
     private int skillId;
 
+    private int proficiency;
+
     public int getUserId() {
         return userId;
     }
@@ -22,11 +24,20 @@ public class UserSkill {
         this.skillId = skillId;
     }
 
+    public int getProficiency() {
+        return proficiency;
+    }
+
+    public void setProficiency(int proficiency) {
+        this.proficiency = proficiency;
+    }
+
     @Override
     public String toString() {
         return "UserSkill{" +
                 "userId=" + userId +
                 ", skillId=" + skillId +
+                ", proficiency=" + proficiency +
                 '}';
     }
 }

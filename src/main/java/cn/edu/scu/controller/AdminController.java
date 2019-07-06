@@ -101,4 +101,71 @@ public class AdminController {
         String duty = request.getParameter("duty");
         return adminService.createFPTreeModel(username, hash, duty);
     }
+
+    @RequestMapping(value = "/recommendModeling", method = RequestMethod.POST)
+    @ResponseBody
+    public UserResult recommendModeling(HttpServletRequest request, HttpServletResponse response) {
+        Cookie[] cookies = request.getCookies();
+        String username = "";
+        String hash = "";
+        if(cookies == null || cookies.length == 0){
+            return adminService.createRecommendModel(username, hash);
+        }
+        for (Cookie cookie : cookies) {
+            if(cookie.getName().equals("username")){
+                username = cookie.getValue();
+            } else if (cookie.getName().equals("hash")){
+                hash = cookie.getValue();
+            }
+        }
+        return adminService.createRecommendModel(username, hash);
+    }
+
+    @RequestMapping(value = "/addSkill", method = RequestMethod.POST)
+    @ResponseBody
+    public UserResult addSkill(HttpServletRequest request, HttpServletResponse response) {
+        Cookie[] cookies = request.getCookies();
+        String username = "";
+        String hash = "";
+        if(cookies == null || cookies.length == 0){
+            System.out.println(request.getHeader("cookie"));
+            return adminService.createFPTreeModel(username, hash, "");
+        }
+        for (Cookie cookie : cookies) {
+            if(cookie.getName().equals("username")){
+                username = cookie.getValue();
+            } else if (cookie.getName().equals("hash")){
+                hash = cookie.getValue();
+            }
+        }
+        String all = request.getParameter("skill");
+        String[] skill = null;
+        if(all.length() > 0)
+            skill = all.split(",");
+        return adminService.addSkill(username, hash, skill);
+    }
+
+    @RequestMapping(value = "/addDuty", method = RequestMethod.POST)
+    @ResponseBody
+    public UserResult addDuty(HttpServletRequest request, HttpServletResponse response) {
+        Cookie[] cookies = request.getCookies();
+        String username = "";
+        String hash = "";
+        if(cookies == null || cookies.length == 0){
+            System.out.println(request.getHeader("cookie"));
+            return adminService.createFPTreeModel(username, hash, "");
+        }
+        for (Cookie cookie : cookies) {
+            if(cookie.getName().equals("username")){
+                username = cookie.getValue();
+            } else if (cookie.getName().equals("hash")){
+                hash = cookie.getValue();
+            }
+        }
+        String duty = request.getParameter("duty");
+        String description = request.getParameter("description");
+
+        return adminService.addDuty(username, hash, duty, description);
+    }
+
 }

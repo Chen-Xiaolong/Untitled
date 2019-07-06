@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface DutyDao {
-    int insertOne(@Param("dutyName") String dutyName);
+    int insertOne(@Param("dutyName") String dutyName, @Param("description") String description);
 
     Duty queryByDutyName(@Param("dutyName") String dutyName);
 

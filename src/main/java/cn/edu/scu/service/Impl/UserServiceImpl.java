@@ -87,11 +87,13 @@ public class UserServiceImpl implements UserService {
         User user = userDao.selectByUserName(name);
         if(skillNames != null)
             for (String skillName : skillNames) {
-                Skill skill = skillDao.queryBySkillName(skillTrim(skillName));
+                String[] sp = skillName.split(":");
+                Skill skill = skillDao.queryBySkillName(skillTrim(sp[0]));
+                int proficiency = Integer.valueOf(sp[1].trim());
                 if(skill == null){
                     return new UserResult(UserResultEnum.UNKNOWN_ERROR);
                 }
-                userSkillDao.insertOne(user.getUserId(), skill.getSkillId());
+                userSkillDao.insertOne(user.getUserId(), skill.getSkillId(), proficiency);
             }
         return new UserResult(UserResultEnum.OPERATION_SUCCESS);
     }
