@@ -196,7 +196,7 @@
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script>
     function recommandskill() {
-        $.post("http://localhost:8080/Untitled/user/jobRecommend",
+        $.post("http://47.103.13.84:8080/Untitled/user/jobRecommend",
         function (data) {
             var des=data.list.split("|");
             for (var i=0;i<des.length;i++){

@@ -210,7 +210,7 @@
     var k=0;
     var m=0;
     function getduty() {
-        $.post("http://localhost:8080/Untitled/common/queryAllDuty",
+        $.post("http://47.103.13.84:8080/Untitled/common/queryAllDuty",
         function (data) {
             var d=data.list.split("[")[1].split("]")[0].split(",");
             for (var i=0;i<d.length;i++){
@@ -308,7 +308,7 @@
         else {
             data1.duty=duty;
         }
-        $.post("http://localhost:8080/Untitled/user/jobAnalyse",
+        $.post("http://47.103.13.84:8080/Untitled/user/jobAnalyse",
         data1,
         function (data) {
             if (data.status==3){

@@ -129,7 +129,8 @@ public class UserServiceImpl implements UserService {
             result += skillDao.queryBySkillId(userSkill.getSkillId()).getSkillName() + ":" + userSkill.getProficiency() + ",";
 //            skills.add(skillDao.queryBySkillId(userSkill.getSkillId()).getSkillName());
         }
-        result = result.substring(0,result.length()-1);
+        if(result.length() > 0)
+            result = result.substring(0,result.length()-1);
         return new UserResult(UserResultEnum.OPERATION_SUCCESS, result);
     }
 

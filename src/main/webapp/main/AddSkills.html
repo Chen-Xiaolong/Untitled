@@ -221,7 +221,7 @@
             console.log(s);
             z.skill=s;
             console.log(z);
-            $.post("http://localhost:8080/Untitled/user/deleteSkill",
+            $.post("http://47.103.13.84:8080/Untitled/user/deleteSkill",
             z,
             function (data) {
                 if (data.status==3) {
@@ -310,7 +310,7 @@
     // }
 <!--    展示所有技能信息-->
     function getskillnames() {
-        $.post("http://localhost:8080/Untitled/common/queryAllSkill",
+        $.post("http://47.103.13.84:8080/Untitled/common/queryAllSkill",
         function (data) {
             // console.log(data);
             var z=data.list.split("[");
@@ -330,7 +330,7 @@
 
     //获取已有技能
     function getskills() {
-        $.post("http://localhost:8080/Untitled/user/querySkill",
+        $.post("http://47.103.13.84:8080/Untitled/user/querySkill",
         function (data) {
             // var z=data.list.split("[")[1];
             // var y=z.split("]")[0];
@@ -427,7 +427,7 @@
             }
             console.log(s);
             data1.skill=s;
-            $.post("http://localhost:8080/Untitled/user/addSkill",
+            $.post("http://47.103.13.84:8080/Untitled/user/addSkill",
                 data1,
                 function (data) {
                     if (data.status==3){
