@@ -105,7 +105,7 @@
                         <li><a id="messages" data-notification="2" href="#"><i class="icon-envelope"></i> 消息</a></li>
                     </ul>
                     <ul class="pull-right">
-                        <li><a href="../../Untitled/login/index.html"><i class="icon-off"></i> 退出</a></li>
+                        <li><a href="../../Untitled/login/index.html" onclick="qui()"><i class="icon-off"></i> 退出</a></li>
                     </ul>
                 </div>
 
@@ -218,19 +218,21 @@
             var x=id.innerText.trim().split("(")[0];
             var xx=id.innerText.trim().split("(")[1].split(")")[0];
             var s=x+":"+xx;
-            console.log(s);
+            // console.log(s);
             z.skill=s;
-            console.log(z);
+            // console.log(z);
             $.post("http://localhost:8080/Untitled/user/deleteSkill",
             z,
             function (data) {
                 if (data.status==3) {
-                    alert("删除成功");
                     document.getElementById('oldskill').innerHTML="";
                     new getskills();
                     // w.removeChild(id);
                 }
-                console.log(data);
+                if (data.status==-1){
+                    alert("未登录!");
+                    window.location.href="../../Untitled/login/index.html";
+                }
             })
     }
 
@@ -243,7 +245,7 @@
         var input, filter, ul, li, a, i;
         input = document.getElementById("myInput");
         filter = input.value.toUpperCase();
-        div = document.getElementById("input1");
+        var div = document.getElementById("input1");
         a = div.getElementsByTagName("a");
         for (i = 0; i < a.length; i++) {
             if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
@@ -265,6 +267,12 @@
             document.getElementById("mybt").innerText="添加技能";
         }
 
+    }
+    function qui() {
+        $.post("http://localhost:8080/Untitled/user/logout",
+        function () {
+
+        });
     }
     function getid(i) {
         var x=i.innerText;
@@ -312,17 +320,23 @@
     function getskillnames() {
         $.post("http://localhost:8080/Untitled/common/queryAllSkill",
         function (data) {
-            // console.log(data);
-            var z=data.list.split("[");
-            var y=z[1].split("]");
-            var x=y[0].split(",");
-            var w=document.getElementById("input2");
-            var v="";
-            num=x.length;
-            for (var i =0;i<x.length;i++){
-                v=v+"<a class='handle' onclick='getid(i"+i+")' id='i"+i+"' >"+x[i]+"</a>";
+            if (data.status==-1){
+                alert("未登录!");
+                window.location.href="../../Untitled/login/index.html";
             }
-            w.innerHTML=v;
+            else {
+                var z=data.list.split("[");
+                var y=z[1].split("]");
+                var x=y[0].split(",");
+                var w=document.getElementById("input2");
+                var v="";
+                num=x.length;
+                for (var i =0;i<x.length;i++){
+                    v=v+"<a class='handle' onclick='getid(i"+i+")' id='i"+i+"' >"+x[i]+"</a>";
+                }
+                w.innerHTML=v;
+            }
+            // console.log(data);
         })
     }
     new getskillnames();
@@ -332,15 +346,21 @@
     function getskills() {
         $.post("http://localhost:8080/Untitled/user/querySkill",
         function (data) {
-            // var z=data.list.split("[")[1];
-            // var y=z.split("]")[0];
-            var x=data.split(",");
-            if (x[0]!=null){
-                for (var i=0;i<x.length;i++){
-                    console.log(x[i]);
-                    new showskills(x[i],i);
+            if (data.status==-1){
+                alert("未登录!");
+                window.location.href="../../Untitled/login/index.html";
+            }
+            else {
+                var x=data.list.split(",");
+                if (x[0]!=null){
+                    for (var i=0;i<x.length;i++){
+                        console.log(x[i]);
+                        new showskills(x[i],i);
+                    }
                 }
             }
+            // var z=data.list.split("[")[1];
+            // var y=z.split("]")[0];
 
         });
     }
@@ -425,7 +445,7 @@
                     s=s+","+z[0]+":"+c;
                 }
             }
-            console.log(s);
+            // console.log(s);
             data1.skill=s;
             $.post("http://localhost:8080/Untitled/user/addSkill",
                 data1,
@@ -437,7 +457,13 @@
                         new getskills();
                     }
                     else {
-                        alert("提交失败！");
+                        if (data.status==-1){
+                            alert("未登录!");
+                            window.location.href="../../Untitled/login/index.html";
+                        }
+                        else {
+                            alert("提交失败！");
+                        }
                     }
 
                 });

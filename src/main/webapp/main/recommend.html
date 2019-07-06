@@ -95,7 +95,7 @@
                         <li><a id="messages" data-notification="2" href="#"><i class="icon-envelope"></i> 消息</a></li>
                     </ul>
                     <ul class="pull-right">
-                        <li><a href="../../Untitled/login/index.html"><i class="icon-off"></i> 退出</a></li>
+                        <li><a href="../../Untitled/login/index.html" onclick="qui()"><i class="icon-off"></i> 退出</a></li>
                     </ul>
                 </div>
 
@@ -198,9 +198,15 @@
     function recommandskill() {
         $.post("http://localhost:8080/Untitled/user/jobRecommend",
         function (data) {
-            var des=data.list.split("|");
-            for (var i=0;i<des.length;i++){
-                wri(des[i]);
+            if (data.status==-1){
+                alert("未登录!");
+                window.location.href="../../Untitled/login/index.html";
+            }
+            else {
+                var des = data.list.split("|");
+                for (var i = 0; i < des.length; i++) {
+                    wri(des[i]);
+                }
             }
         });
 
@@ -230,6 +236,12 @@
         w.appendChild(b);
     }
      new recommandskill();
+    function qui() {
+        $.post("http://localhost:8080/Untitled/user/logout",
+            function () {
+
+            });
+    }
 </script>
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>

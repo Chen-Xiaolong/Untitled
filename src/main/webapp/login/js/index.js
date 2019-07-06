@@ -47,13 +47,12 @@ $('#log').on('click',function(){
     var y=document.getElementById('user-password').value;
     data2.username=x;
     data2.password=y;
-    console.log(data2);
+    // console.log(data2);
     $.post("http://localhost:8080/Untitled/user/login",
         data2,
         function (data) {
             if (data.status==1) {
                 window.location.href="../../../../Untitled/main/AddSkills.html";
-                alert("登陆成功");
             }
             else{
                 alert("登陆失败");
@@ -67,13 +66,13 @@ $('#register_log').on('click',function(){
     var y=document.getElementById('register_password').value;
     data3.username=x;
     data3.password=y;
-    console.log("123"+data3);
+    // console.log("123"+data3);
     $.post("http://localhost:8080/Untitled/admin/login",
         data3,
         function (data) {
             if (data.status==1) {
                 window.location.href="../../../Untitled/main/management.html";
-                alert("登陆成功");
+                // alert("登陆成功");
             }
             else{
                 alert("登陆失败");
