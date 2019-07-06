@@ -330,16 +330,17 @@
     function getskills() {
         $.post("http://localhost:8080/Untitled/user/querySkill",
         function (data) {
-            console.log(data);
-            var z=data.list.split("[")[1];
-            var y=z.split("]")[0];
-            var x=y.split(",");
-            console.log(x);
-            for (var i=0;i<x.length;i++){
-                console.log(x[i]);
-                new showskills(x[i],i);
+            // var z=data.list.split("[")[1];
+            // var y=z.split("]")[0];
+            var x=data.split(",");
+            if (x[0]!=null){
+                for (var i=0;i<x.length;i++){
+                    console.log(x[i]);
+                    new showskills(x[i],i);
+                }
             }
-        })
+
+        });
     }
 <!--    展示技能的动态添加-->
     function showskills(name,i) {
