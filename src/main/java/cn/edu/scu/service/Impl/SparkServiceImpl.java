@@ -276,9 +276,9 @@ public class SparkServiceImpl {
 
         String result = "";
         Duty duty = dutyDao.queryByDutyId(label[0] + 1);
-        result += duty.getDutyName()+":"+duty.getDescription()+":"+star_level[0];
+        result += duty.getDutyName()+":"+duty.getDescription()+":"+star_level[0] + "|";
         duty = dutyDao.queryByDutyId(label[1] + 1);
-        result += duty.getDutyName()+":"+duty.getDescription()+":"+star_level[1];
+        result += duty.getDutyName()+":"+duty.getDescription()+":"+star_level[1] + "|";
         duty = dutyDao.queryByDutyId(label[2] + 1);
         result += duty.getDutyName()+":"+duty.getDescription()+":"+star_level[2];
 
@@ -396,14 +396,6 @@ public class SparkServiceImpl {
         return d;
 
     }
-
-
-
-
-
-
-
-
 
 
 
