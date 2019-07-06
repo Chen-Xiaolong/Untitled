@@ -53,7 +53,7 @@
                         <li><a id="messages" data-notification="2" href="#"><i class="icon-envelope"></i> 消息</a></li>
                     </ul>
                     <ul class="pull-right">
-                        <li><a href="../../Untitled/login/index.html"><i class="icon-off"></i> 退出</a></li>
+                        <li><a href="../../Untitled/login/index.html" onclick="qui()"><i class="icon-off"></i> 退出</a></li>
                     </ul>
                 </div>
 
@@ -212,11 +212,16 @@
     function getduty() {
         $.post("http://47.103.13.84:8080/Untitled/common/queryAllDuty",
         function (data) {
-            var d=data.list.split("[")[1].split("]")[0].split(",");
-            for (var i=0;i<d.length;i++){
-                console.log(d[i]);
-                showduty(d[i]);
-
+            if (data.status==-1){
+                alert("未登录!");
+                window.location.href="../../Untitled/login/index.html";
+            }
+            else {
+                var d = data.list.split("[")[1].split("]")[0].split(",");
+                for (var i = 0; i < d.length; i++) {
+                    // console.log(d[i]);
+                    showduty(d[i]);
+                }
             }
         });
     }
@@ -245,7 +250,7 @@
         }
         var id="c"+m;
         var u = document.getElementById(id);
-        console.log(u);
+        // console.log(u);
         var x = document.createElement("span");
         var c = "";
         switch (n) {
@@ -321,7 +326,17 @@
                 v.innerText=txt;
                 w.appendChild(v);
             }
+            if (data.status==-1){
+                alert("未登录!");
+                window.location.href="../../Untitled/login/index.html";
+            }
         })
+    }
+    function qui() {
+        $.post("http://localhost:8080/Untitled/user/logout",
+            function () {
+
+            });
     }
 </script>
 <!--<script type="text/javascript" src="../../../code.jquery.com/jquery-latest.js"></script>-->

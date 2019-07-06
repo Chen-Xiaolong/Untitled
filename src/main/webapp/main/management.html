@@ -70,7 +70,7 @@
                         <li><a id="messages" data-notification="2" href="#"><i class="icon-envelope"></i> 信息</a></li>
                     </ul>
                     <ul class="pull-right">
-                        <li><a href="../../Untitled/login/index.html"><i class="icon-off"></i> 退出</a></li>
+                        <li><a href="../../Untitled/login/index.html" onclick="qui()"><i class="icon-off"></i> 退出</a></li>
                     </ul>
                 </div>
 
@@ -207,7 +207,7 @@
             var data1={};
             var x=document.getElementById('rebuild').innerText;
             data1.duty=x;
-            $.post('http://47.103.13.84:8080/Untitled/admin/analyseModeling',
+            $.post('http://localhost:8080/Untitled/admin/analyseModeling',
             data1,
             function (data) {
                 if (data.status==3) {
@@ -215,7 +215,13 @@
                     v.innerText="正在重新岗位建模!";
                 }
                 else {
-                    v.innerText="岗位建模失败!";
+                    if (data.status==-1){
+                        alert("未登录!");
+                        window.location.href="../../Untitled/login/index.html";
+                    }
+                    else {
+                        v.innerText = "岗位建模失败!";
+                    }
                 }
             });
         }
@@ -224,27 +230,39 @@
             var x=document.getElementById(name).innerText;
             if (name=="newskill"){
                 data2.skill=x;
-                $.post("http://47.103.13.84:8080/Untitled/admin/addSkill",
+                $.post("http://localhost:8080/Untitled/admin/addSkill",
                 data2,
                 function (data) {
                    if (data.status==3){
                        v.innerText="添加技能成功!";
                    }
                    else {
-                       v.innerText="添加技能失败!";
+                       if (data.status==-1){
+                           alert("未登录!");
+                           window.location.href="../../Untitled/login/index.html";
+                       }
+                       else {
+                           v.innerText = "添加技能失败!";
+                       }
                    }
                 });
             }
             else {
                 data2.description=document.getElementById("discribe").innerText;
                 data2.duty=x;
-                $.post("http://47.103.13.84:8080/Untitled/admin/addDuty",
+                $.post("http://localhost:8080/Untitled/admin/addDuty",
                 data2,
                 function (data) {
                     if (data.status==3)
                         v.innerText="添加岗位成功!";
                     else {
-                        v.innerText="添加岗位失败!";
+                        if (data.status==-1){
+                            alert("未登录!");
+                            window.location.href="../../Untitled/login/index.html";
+                        }
+                        else {
+                            v.innerText = "添加岗位失败!";
+                        }
                     }
                 });
             }
@@ -257,13 +275,19 @@
     function recom() {
         var w=document.getElementById('retu');
         var v=document.createElement('li');
-        $.post("http://47.103.13.84:8080/Untitled/admin/recommendModeling",
+        $.post("http://localhost:8080/Untitled/admin/recommendModeling",
         function (data) {
             if (data.status==3){
                 v.innerText="正在重新推荐建模!";
             }
             else{
-                v.innerText="推荐建模失败!";
+                if (data.status==-1){
+                    alert("未登录!");
+                    window.location.href="../../Untitled/login/index.html";
+                }
+                else {
+                    v.innerText = "推荐建模失败!";
+                }
             }
         });
         w.appendChild(v);
@@ -282,7 +306,7 @@
                     var data1={};
                     var flag=1;
                     var y=x[i].split(',');
-                    console.log(y);
+                    // console.log(y);
                     data1.duty=y[0];
                     var s=y[1];
                     for (var j=2;j<y.length;j++){
@@ -290,16 +314,22 @@
                         s=s+","+y[j];
                     }
                     data1.skills=s;
-                    console.log(data1);
-                    $.post('http://47.103.13.84:8080/Untitled/admin/addEmployment',
+                    // console.log(data1);
+                    $.post('http://localhost:8080/Untitled/admin/addEmployment',
                     data1,
                     function (data) {
-                        console.log(data);
+                        // console.log(data);
                         if (data.status==3){
                             v.innerText="成功添加数据:"+x[i];
                         }
                         else {
-                            v.innerText="添加数据："+x[i]+"失败";
+                            if (data.status==-1){
+                                alert("未登录!");
+                                window.location.href="../../Untitled/login/index.html";
+                            }
+                            else {
+                                v.innerText = "添加数据：" + x[i] + "失败";
+                            }
                         }
                         w.appendChild(v);
                     });
@@ -310,6 +340,12 @@
             }
         };
         reader.readAsText(input.files[0]);
+    }
+    function qui() {
+        $.post("http://localhost:8080/Untitled/admin/logout",
+            function () {
+
+            });
     }
 </script>
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
