@@ -325,12 +325,12 @@
                 window.location.href="../../Untitled/login/index.html";
             }
             else {
-                var z=data.list.split("[");
-                var y=z[1].split("]");
-                var x=y[0].split(",");
+                // var z=data.list.split("[");
+                // var y=z[1].split("]");
+                var x=data.split(",");
                 var w=document.getElementById("input2");
                 var v="";
-                num=x.length;
+
                 for (var i =0;i<x.length;i++){
                     v=v+"<a class='handle' onclick='getid(i"+i+")' id='i"+i+"' >"+x[i]+"</a>";
                 }
