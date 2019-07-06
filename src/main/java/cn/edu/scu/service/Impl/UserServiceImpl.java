@@ -122,13 +122,15 @@ public class UserServiceImpl implements UserService {
         if(!isLogin(name, hash)){
             return new UserResult(UserResultEnum.UNLOGINED);
         }
-        List<String> skills = new ArrayList<>();
+        String result = "";
         User user = userDao.selectByUserName(name);
         List<UserSkill> userSkills = userSkillDao.queryByUserId(user.getUserId());
         for (UserSkill userSkill : userSkills) {
-            skills.add(skillDao.queryBySkillId(userSkill.getSkillId()).getSkillName());
+            result += skillDao.queryBySkillId(userSkill.getSkillId()).getSkillName() + ":" + userSkill.getProficiency() + ",";
+//            skills.add(skillDao.queryBySkillId(userSkill.getSkillId()).getSkillName());
         }
-        return new UserResult(UserResultEnum.OPERATION_SUCCESS, Arrays.toString(skills.toArray()));
+        result = result.substring(0,result.length()-1);
+        return new UserResult(UserResultEnum.OPERATION_SUCCESS, result);
     }
 
     private boolean isLogin(String name, String hash) {

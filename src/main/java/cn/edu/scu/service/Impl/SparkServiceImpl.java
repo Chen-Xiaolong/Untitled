@@ -199,22 +199,23 @@ public class SparkServiceImpl {
 
 
         List<Skill> skills = skillDao.queryAll();
-        List<String> skill_name_list = new ArrayList<>();
-        for (Skill skill : skills) {
-            skill_name_list.add(skill.getSkillName());
-        }
-        String [] skill_name = (String[])skill_name_list.toArray();
+//        List<String> skill_name_list = new ArrayList<>();
+//        for (Skill skill : skills) {
+//            skill_name_list.add(skill.getSkillName());
+//        }
+//        String [] skill_name = (String[])skill_name_list.toArray();
         List<String> duty_name_list = new ArrayList<>();
         List<Duty> duties = dutyDao.queryAll();
         for (Duty duty : duties) {
             duty_name_list.add(duty.getDutyName());
         }
-        String [] joblist = (String[]) duty_name_list.toArray();
+        String [] joblist = new String[duty_name_list.size()];
+        duty_name_list.toArray(joblist);
 
 
 
 
-        String[] skill_num =input.split(",");
+        String[] skill_num =input.split(" ");
         int attributes[] =new int[skill_num.length];
         double values[] =new double[skill_num.length];
         for(int i=0;i<skill_num.length;i++){
@@ -224,9 +225,9 @@ public class SparkServiceImpl {
             attributes[i] = (int)temp1;
             values[i] = temp2;
         }
-        double []  d = new double[skill_name.length];
+        double []  d = new double[skills.size()];
         int temp =0;
-        for(int i=0;i<skill_name.length;i++){
+        for(int i=0;i<skills.size();i++){
             if(temp<skill_num.length){
                 if(i==attributes[temp]-1){
                     d[i] = values[temp];
