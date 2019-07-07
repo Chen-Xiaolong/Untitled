@@ -112,8 +112,12 @@ public class SparkServiceImpl {
 //        result.foreach(x ->
 //                System.out.println(x));
         boolean IsTCPIP=false;
-        for(String rex:skill)
+        boolean IsC=false;
+        for(String rex:skill){
             if(rex.equals("TCP/IP"))IsTCPIP=true;
+            if(rex.equals("C/C++"))IsC=true;
+        }
+
         String combine = new String();
         for(String rex:skill)
             combine+=","+rex;
@@ -129,6 +133,8 @@ public class SparkServiceImpl {
                 String S=x.javaConsequent().toString();
                 S=S.substring(1,S.length()-1);
                 if(IsTCPIP==true&&S.equals("IP"))continue;
+                if(IsC==true&&S.equals("C"))continue;
+                if(IsC==true&&S.equals("C++"))continue;
                 if(S.equals("计算机"))continue;
                 for(String j :skill){
                     if(j.equals(S))
@@ -163,6 +169,11 @@ public class SparkServiceImpl {
             }
         }
 
+        for(int i=0;i<5;i++)
+            if(confstr[i]!=null){
+                conSkillList.add(confstr[i]);
+            }
+
         if(conSkillList.size()==0){
             int lack=5;
             for(String ext:skillList){
@@ -171,10 +182,7 @@ public class SparkServiceImpl {
                 conSkillList.add(ext);
             }
         }
-        for(int i=0;i<5;i++)
-            if(confstr[i]!=null){
-                conSkillList.add(confstr[i]);
-            }
+
 
         for(String x :skill){
             if(skillList.contains(x))
@@ -195,8 +203,9 @@ public class SparkServiceImpl {
                 input += userSkill.getSkillId() + ":" + userSkill.getProficiency() + " ";
             }
             input = input.substring(0, input.length()-1);
+        } else {
+            return new UserResult(UserResultEnum.UNKNOWN_ERROR);
         }
-
 
         List<Skill> skills = skillDao.queryAll();
 //        List<String> skill_name_list = new ArrayList<>();
@@ -225,9 +234,9 @@ public class SparkServiceImpl {
             attributes[i] = (int)temp1;
             values[i] = temp2;
         }
-        double []  d = new double[skills.size()];
+        double []  d = new double[skills.get(skills.size()-1).getSkillId()];
         int temp =0;
-        for(int i=0;i<skills.size();i++){
+        for(int i=0;i<skills.get(skills.size()-1).getSkillId();i++){
             if(temp<skill_num.length){
                 if(i==attributes[temp]-1){
                     d[i] = values[temp];

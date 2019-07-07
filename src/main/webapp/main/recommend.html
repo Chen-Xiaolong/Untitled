@@ -196,17 +196,23 @@
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script>
     function recommandskill() {
-        $.post("http://47.103.13.84:8080/Untitled/user/jobRecommend",
+        $.post("http://node-master:8080/Untitled/user/jobRecommend",
         function (data) {
             if (data.status==-1){
                 alert("未登录!");
                 window.location.href="../../Untitled/login/index.html";
             }
             else {
-                var des = data.list.split("|");
-                for (var i = 0; i < des.length; i++) {
-                    wri(des[i]);
+                if (data.status==-999){
+                    alert("请先添加技能，再查看推荐！");
                 }
+                else {
+                    var des = data.list.split("|");
+                    for (var i = 0; i < des.length; i++) {
+                        wri(des[i]);
+                    }
+                }
+
             }
         });
 
@@ -214,30 +220,53 @@
     function wri(name) {
         var n=name.split(":")[0];
         var d=name.split(":")[1];
-        var num=name.split(":")[2];
+        var num=parseInt(name.split(":")[2]);
+        // console.log(num);
         var w=document.getElementById("dutyrecom");
-        var h=document.createElement("h5");
-        var t=document.createElement("span");
-        var b=document.createElement("br");
-        var v=document.createElement("span");
-        var s=document.createElement("div");
-        t.innerText=n;
-        t.className="flo";
-        h.appendChild(t);
-        s.className="star-five";
-        s.className="flo";
-        for (var i=0;i<num;i++){
-            h.appendChild(s);
+        var h=document.createElement("div");
+        if(num==1){
+            h.innerHTML="<h5><span style='float: left;font-size: 30px;' class='flo'>"+n+"</span><div class='star-five' style='float: left;'></div><br><br><span style='font-size: 20px' class='help-block'>"+d+"</span><br><br><br>"
         }
-        w.appendChild(b);
+        if(num==2){
+            h.innerHTML="<h5><span style='float: left;font-size: 30px;' class='flo'>"+n+"</span><div class='star-five' style='float: left;'></div><div class='star-five' style='float: left;'></div><br><br><span style='font-size: 20px' class='help-block'>"+d+"</span><br><br><br>"
+        }
+        if(num==3){
+            h.innerHTML="<h5><span style='float: left;font-size: 30px;' class='flo'>"+n+"</span><div class='star-five' style='float: left;'></div><div class='star-five' style='float: left;'></div><div class='star-five' style='float: left;'></div><br><br><span style='font-size: 20px' class='help-block'>"+d+"</span><br><br><br>"
+        }
+        if(num==4){
+            h.innerHTML="<h5><span style='float: left;font-size: 30px;' class='flo'>"+n+"</span><div class='star-five' style='float: left;'></div><div class='star-five' style='float: left;'></div><div class='star-five' style='float: left;'></div><div class='star-five' style='float: left;'></div><br><br><span style='font-size: 20px' class='help-block'>"+d+"</span><br><br><br>"
+        }
+        if(num==5){
+            h.innerHTML="<h5><span style='float: left;font-size: 30px;' class='flo'>"+n+"</span><div class='star-five' style='float: left;'></div><div class='star-five' style='float: left;'></div><div class='star-five' style='float: left;'></div><div class='star-five' style='float: left;'></div><div class='star-five' style='float: left;'></div><br><br><span style='font-size: 20px' class='help-block'>"+d+"</span><br><br><br>"
+        }
+
+
+
+        // h.className="star-five";
         w.appendChild(h);
-        v.innerText=d;
-        w.appendChild(v);
-        w.appendChild(b);
+
+
+        // var t=document.createElement("h5");
+        // var b=document.createElement("br");
+        // var v=document.createElement("span");
+        // var s=document.createElement("div");
+        // t.innerText=n;
+        // t.className="flo";
+        // h.appendChild(t);
+        // s.className="star-five";
+        // s.className="flo";
+        // for (var i=0;i<num;i++){
+        //     h.appendChild(s);
+        // }
+        // w.appendChild(s);
+        // w.appendChild(h);
+        // v.innerText=d;
+        // w.appendChild(v);
+        // w.appendChild(b);
     }
      new recommandskill();
     function qui() {
-        $.post("http://localhost:8080/Untitled/user/logout",
+        $.post("http://node-master:8080/Untitled/user/logout",
             function () {
 
             });

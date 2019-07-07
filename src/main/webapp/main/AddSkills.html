@@ -216,12 +216,11 @@
     console.log(id);
             var z={};
             var x=id.innerText.trim().split("(")[0];
-            var xx=id.innerText.trim().split("(")[1].split(")")[0];
-            var s=x+":"+xx;
+            var s=x;
             // console.log(s);
             z.skill=s;
             // console.log(z);
-            $.post("http://localhost:8080/Untitled/user/deleteSkill",
+            $.post("http://node-master:8080/Untitled/user/deleteSkill",
             z,
             function (data) {
                 if (data.status==3) {
@@ -269,7 +268,7 @@
 
     }
     function qui() {
-        $.post("http://localhost:8080/Untitled/user/logout",
+        $.post("http://node-master:8080/Untitled/user/logout",
         function () {
 
         });
@@ -318,16 +317,16 @@
     // }
 <!--    展示所有技能信息-->
     function getskillnames() {
-        $.post("http://localhost:8080/Untitled/common/queryAllSkill",
+        $.post("http://node-master:8080/Untitled/common/queryAllSkill",
         function (data) {
             if (data.status==-1){
                 alert("未登录!");
                 window.location.href="../../Untitled/login/index.html";
             }
             else {
-                // var z=data.list.split("[");
-                // var y=z[1].split("]");
-                var x=data.split(",");
+                var z=data.list.split("[");
+                var y=z[1].split("]");
+                var x=y[0].split(",");
                 var w=document.getElementById("input2");
                 var v="";
 
@@ -344,7 +343,7 @@
 
     //获取已有技能
     function getskills() {
-        $.post("http://localhost:8080/Untitled/user/querySkill",
+        $.post("http://node-master:8080/Untitled/user/querySkill",
         function (data) {
             if (data.status==-1){
                 alert("未登录!");
@@ -371,11 +370,11 @@
         var z=name.split(":");
         var c="";
         switch (z[1]) {
-            case 1:c="了解";break;
-            case 2:c="掌握";break;
-            case 3:c="熟悉";break;
-            case 4:c="精通";break;
-            case 5:c="大师";break;
+            case '1':c="了解";break;
+            case '2':c="掌握";break;
+            case '3':c="熟练";break;
+            case '4':c="精通";break;
+            case '5':c="大师";break;
         }
         y.className="listyle";
         var  z="<a id='b"+i+"'>"+z[0]+"("+c+")"+"</a><button onclick='deletebtn(b"+i+")' style='float: right;background-color: #0e90d2' class=\"btn btn-primary btnstyle\" > 删除</button>"
@@ -434,7 +433,7 @@
                 switch (z[1]) {
                     case "了解":c=1;break;
                     case "掌握":c=2;break;
-                    case "熟悉":c=3;break;
+                    case "熟练":c=3;break;
                     case "精通":c=4;break;
                     case "大师":c=5;break;
                 }
@@ -447,7 +446,7 @@
             }
             // console.log(s);
             data1.skill=s;
-            $.post("http://localhost:8080/Untitled/user/addSkill",
+            $.post("http://node-master:8080/Untitled/user/addSkill",
                 data1,
                 function (data) {
                     if (data.status==3){

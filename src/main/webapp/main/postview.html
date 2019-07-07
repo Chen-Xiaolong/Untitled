@@ -196,7 +196,7 @@
                             <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i class="icon-chevron-up"></i></a>
                         </div>
                     </div>
-                    <div class="widget-body row-fluid" style="height: 300px" id="require">
+                    <div class="widget-body row-fluid" style="overflow-y: auto;height: 300px" id="require">
 
                     </div><!--/widget-body-->
                 </div> <!-- /widget -->
@@ -210,14 +210,14 @@
     var k=0;
     var m=0;
     function getduty() {
-        $.post("http://47.103.13.84:8080/Untitled/common/queryAllDuty",
+        $.post("http://node-master:8080/Untitled/common/queryAllDuty",
         function (data) {
             if (data.status==-1){
                 alert("未登录!");
                 window.location.href="../../Untitled/login/index.html";
             }
             else {
-                var d = data.list.split("[")[1].split("]")[0].split(",");
+                var d = data.list.split("[")[1].split("]")[0].split(", ");
                 for (var i = 0; i < d.length; i++) {
                     // console.log(d[i]);
                     showduty(d[i]);
@@ -307,13 +307,14 @@
     // 推荐信息显示
     function getrequire(duty) {
         var data1={};
-        if (duty=="C++开发工程师") {
-            data1.duty="C%2B%2B开发工程师";
-        }
-        else {
-            data1.duty=duty;
-        }
-        $.post("http://47.103.13.84:8080/Untitled/user/jobAnalyse",
+        // if (duty=="C++开发工程师") {
+        //     data1.duty="C%2B%2B开发工程师";
+        // }
+        // else {
+        //     data1.duty=duty;
+        // }
+        data1.duty=duty;
+        $.post("http://node-master:8080/Untitled/user/jobAnalyse",
         data1,
         function (data) {
             if (data.status==3){
@@ -322,7 +323,7 @@
                 var x=data.list.split("\n");
                 var o=x[0].split("[")[1].split("]")[0];
                 var n=x[1].split("[")[1].split("]")[0];
-                var txt="对于"+duty+"岗位所需技能，您目前所掌握的有:"+o+"您目前所缺乏的有:"+n;
+                var txt="对于"+duty+"\n优势技能:"+o+"\n推荐技能:"+n;
                 v.innerText=txt;
                 w.appendChild(v);
             }

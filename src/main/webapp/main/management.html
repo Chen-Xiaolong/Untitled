@@ -188,7 +188,7 @@
                             <a href="#" data-title="Collapse" data-collapsed="false" class="tip collapse"><i class="icon-chevron-up"></i></a>
                         </div>
                     </div>
-                    <div class="widget-body row-fluid" style="height: 200px" id="retu">
+                    <div class="widget-body row-fluid" style="overflow-y: auto;height: 200px" id="retu">
 
                     </div><!--/widget-body-->
                 </div><!-- /widget -->
@@ -205,14 +205,14 @@
         var v=document.createElement('li');
         if (name=='rebuild'){
             var data1={};
-            var x=document.getElementById('rebuild').innerText;
+            var x=document.getElementById('rebuild').value;
             data1.duty=x;
-            $.post('http://localhost:8080/Untitled/admin/analyseModeling',
+            $.post('http://node-master:8080/Untitled/admin/analyseModeling',
             data1,
             function (data) {
                 if (data.status==3) {
-                    document.getElementById('rebuild').innerText="";
-                    v.innerText="正在重新岗位建模!";
+                    document.getElementById('rebuild').value="";
+                    v.innerText="建模成功!";
                 }
                 else {
                     if (data.status==-1){
@@ -227,10 +227,10 @@
         }
         else {
             var data2={};
-            var x=document.getElementById(name).innerText;
+            var x=document.getElementById(name).value;
             if (name=="newskill"){
                 data2.skill=x;
-                $.post("http://localhost:8080/Untitled/admin/addSkill",
+                $.post("http://node-master:8080/Untitled/admin/addSkill",
                 data2,
                 function (data) {
                    if (data.status==3){
@@ -248,9 +248,9 @@
                 });
             }
             else {
-                data2.description=document.getElementById("discribe").innerText;
+                data2.description=document.getElementById("discribe").value;
                 data2.duty=x;
-                $.post("http://localhost:8080/Untitled/admin/addDuty",
+                $.post("http://node-master:8080/Untitled/admin/addDuty",
                 data2,
                 function (data) {
                     if (data.status==3)
@@ -275,10 +275,10 @@
     function recom() {
         var w=document.getElementById('retu');
         var v=document.createElement('li');
-        $.post("http://localhost:8080/Untitled/admin/recommendModeling",
+        $.post("http://node-master:8080/Untitled/admin/recommendModeling",
         function (data) {
             if (data.status==3){
-                v.innerText="正在重新推荐建模!";
+                v.innerText="推荐建模成功!";
             }
             else{
                 if (data.status==-1){
@@ -296,16 +296,22 @@
         var w=document.getElementById('retu');
         var input = event.target;
         var reader = new FileReader();
+        var suc=0;
+        var fai=0;
+        var u=document.createElement('li');
         reader.onload = function() {
             if(reader.result) {
                 //显示文件内容
                 // console.log(reader.result);
                 var x=reader.result.split("\n");
                 for (var i=0;i<x.length;i++){
-                    var v=document.createElement('li');
+                    if(x[i] === ""){
+                        continue;
+                    }
                     var data1={};
                     var flag=1;
                     var y=x[i].split(',');
+                    var da = x[i].toString();
                     // console.log(y);
                     data1.duty=y[0];
                     var s=y[1];
@@ -313,14 +319,15 @@
                         // console.log(y[i]);
                         s=s+","+y[j];
                     }
-                    data1.skills=s;
+                    data1.skill=s;
                     // console.log(data1);
-                    $.post('http://localhost:8080/Untitled/admin/addEmployment',
+                    $.post('http://node-master:8080/Untitled/admin/addEmployment',
                     data1,
                     function (data) {
+                        var v=document.createElement('li');
                         // console.log(data);
                         if (data.status==3){
-                            v.innerText="成功添加数据:"+x[i];
+                            v.innerText="添加数据成功";
                         }
                         else {
                             if (data.status==-1){
@@ -328,7 +335,8 @@
                                 window.location.href="../../Untitled/login/index.html";
                             }
                             else {
-                                v.innerText = "添加数据：" + x[i] + "失败";
+                                v.innerText = "添加数据失" +
+                                    "败";
                             }
                         }
                         w.appendChild(v);
@@ -340,9 +348,11 @@
             }
         };
         reader.readAsText(input.files[0]);
+        // u.innerText="添加数据成功:"+suc+"条  失败"+fai + "条";
+        // w.appendChild(u);
     }
     function qui() {
-        $.post("http://localhost:8080/Untitled/admin/logout",
+        $.post("http://node-master:8080/Untitled/admin/logout",
             function () {
 
             });

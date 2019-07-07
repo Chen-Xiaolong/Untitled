@@ -48,7 +48,7 @@ $('#log').on('click',function(){
     data2.username=x;
     data2.password=y;
     console.log(data2);
-    $.post("http://47.103.13.84:8080/Untitled/user/login",
+    $.post("http://node-master:8080/Untitled/user/login",
         data2,
         function (data) {
             if (data.status==1) {
@@ -68,7 +68,7 @@ $('#register_log').on('click',function(){
     data3.username=x;
     data3.password=y;
     console.log("123"+data3);
-    $.post("http://47.103.13.84:8080/Untitled/admin/login",
+    $.post("http://node-master:8080/Untitled/admin/login",
         data3,
         function (data) {
             if (data.status==1) {
@@ -89,7 +89,7 @@ $('#register').on('click',function () {
    if(y1==y2){
        data1.username=x;
        data1.password=y1;
-       $.post("http://47.103.13.84:8080/Untitled/user/register",
+       $.post("http://node-master:8080/Untitled/user/register",
            data1,
            function (data) {
                if(data.status==2){

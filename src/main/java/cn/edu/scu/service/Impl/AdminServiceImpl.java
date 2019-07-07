@@ -5,6 +5,7 @@ import cn.edu.scu.dao.DutyDao;
 import cn.edu.scu.dao.EmploymentDao;
 import cn.edu.scu.dao.SkillDao;
 import cn.edu.scu.dto.UserResult;
+import cn.edu.scu.entity.Skill;
 import cn.edu.scu.entity.User;
 import cn.edu.scu.enums.UserResultEnum;
 import cn.edu.scu.service.AdminService;
@@ -16,6 +17,9 @@ import org.springframework.stereotype.Service;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -105,10 +109,11 @@ public class AdminServiceImpl implements AdminService {
             if(skills != null){
                 for (String skill : skills){
                     skill = skillTrim(skill);
-                    buf1 += skill + ",";
                     if(skillDao.queryCountBySkillName(skill) == 0){
-                        skillDao.insertOne(skill);
+//                        skillDao.insertOne(skill);
+                        continue;
                     }
+                    buf1 += skill + ",";
                 }
                 output1.write(buf1.substring(0, buf1.length()-1) + "\n");
             }
@@ -119,16 +124,25 @@ public class AdminServiceImpl implements AdminService {
             int dutyId = dutyDao.queryByDutyName(duty).getDutyId();
             buf2 += dutyId-1 + " ";
             if(skills != null){
+                List<Skill> skillList = new ArrayList<>();
                 for (String skill : skills){
                     skill = skillTrim(skill);
                     if(skillDao.queryCountBySkillName(skill) == 0){
-                        skillDao.insertOne(skill);
+//                        skillDao.insertOne(skill);
+                        continue;
                     }
-                    int skillId = skillDao.queryBySkillName(skill).getSkillId();
-                    buf2 += skillId + ":1 ";
+//                    int skillId = skillDao.queryBySkillName(skill).getSkillId();
+//                    buf2 += skillId + ":1 ";
+
+                    skillList.add(skillDao.queryBySkillName(skill));
 
                 }
-                output2.write(buf2.substring(0, buf1.length()-1) + "\n");
+                skillList.sort(Comparator.comparingInt(Skill::getSkillId));
+                for (Skill skill : skillList) {
+                    buf2 += skill.getSkillId() + ":1 ";
+                }
+
+                output2.write(buf2.substring(0, buf2.length()-1) + "\n");
             }
             output2.flush();
             output2.close();
