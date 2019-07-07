@@ -105,8 +105,5 @@ $('#register').on('click',function () {
    }
 });
 
-// jQuery('#admin').click(function () {
-//    jQuery('.new_form').show();
-//    jQuery('.form').hide();
-// });
+
 jQuery('#')

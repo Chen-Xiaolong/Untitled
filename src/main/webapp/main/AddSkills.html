@@ -276,45 +276,12 @@
     function getid(i) {
         var x=i.innerText;
         document.getElementById("mybt").innerText=x;
-        // var x=i.innerText;
-        // var w=document.getElementById("addskilltxt");
-        // var y=w.innerText;
-        // if (y.length==0){
-        //     y="已选择的技能:"+x+"(默认熟练度掌握)";
-        //     userskills= x+":2";
-        // }
-        // else {
-        //     var z=y.split("熟练度");
-        //     if (z.length==2){
-        //         y=y.split("(默认熟练度掌握)")[0]+"(掌握)"
-        //     }
-        //     y=y+","+x+"(默认熟练度掌握)";
-        //     userskills=userskills+ ","+x+":2";
-        // }
+
         document.getElementById("input1").classList.remove("show");
         document.getElementById("input1").classList.add("hide");
         // w.innerText=y;
     }
-    // function changeclass() {
-    //     // console.log("d点击");
-    //     var w=document.getElementById("addskilltxt").innerText;
-    //     var y=document.getElementById("abcd").value;
-    //     y="("+y+")";
-    //     console.log(y)
-    //     var x=w.split("(默认熟练度掌握)");
-    //     if (x.length==2){
-    //         w=x[0]+y;
-    //     }
-    //     else {
-    //         var z=w.split("(");
-    //         w="";
-    //         for (var i=0;i<(z.length-1);i++){
-    //             w=w+"("+z[i];
-    //         }
-    //         w=w+y;
-    //     }
-    //     document.getElementById("addskilltxt").innerText=w;
-    // }
+
 <!--    展示所有技能信息-->
     function getskillnames() {
         $.post("http://node-master:8080/Untitled/common/queryAllSkill",
@@ -394,31 +361,7 @@
         else {
             x.removeChild(y);
         }
-        // console.log(x);
-        // if (x!=""){
-        //     var y=x.split(",");
-        //     console.log(y);
-        //     if(y.length==1){
-        //         document.getElementById('addskilltxt').innerText="";
-        //     }
-        //     else{
-        //         var z="";
-        //         for (var i=0;i<(y.length-1);i++) {
-        //             if (z==""){
-        //                 z=z+y[i];
-        //             }
-        //             else {
-        //                 z=z+','+y[i];
-        //             }
-        //
-        //         }
-        //         console.log(z);
-        //         document.getElementById('addskilltxt').innerText=z;
-        //     }
-        // }
-        // else{
-        //     alert("已完全删除")
-        // }
+
     });
     //获取用户选择，并提交进数据库
     $('#add').on('click',function () {
@@ -469,25 +412,7 @@
 
         }
 
-        // if (x!=""){
-        //     var y=x.split(":")[1];
-        //     var data1={};
-        //     data1.skill=y;
-        //     $.post("http://localhost:8080/Untitled/user/addSkill",
-        //     data1,
-        //     function (data) {
-        //         if (data.status==3){
-        //             document.getElementById('addskilltxt').innerText="";
-        //             alert("添加成功！");
-        //             document.getElementById('oldskill').innerHTML="";
-        //             new getskills();
-        //         }
-        //         else {
-        //             alert("提交失败！");
-        //         }
-        //
-        //     });
-        // }
+
     });
 </script>
 <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
